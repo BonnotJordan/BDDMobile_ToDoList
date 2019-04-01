@@ -13,7 +13,7 @@
         <!--List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BDDMobile_List" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ItemListViewController" customModule="BDDMobile_List" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,13 +56,13 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="VsC-MQ-1Lo">
                             <connections>
                                 <action selector="addItem:" destination="BYZ-38-t0r" id="30r-nS-Sim"/>
-                                <segue destination="BCQ-Tq-II7" kind="presentation" identifier="addItem" id="fEr-Fg-BLj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="Yg2-f1-qmS" id="NqP-eb-okk"/>
                         <outlet property="tableView" destination="wS2-tK-Liz" id="vgl-e5-K1r"/>
+                        <segue destination="BCQ-Tq-II7" kind="presentation" identifier="editItem" id="xbG-am-zmh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -72,7 +72,7 @@
         <!--Add Item-->
         <scene sceneID="GFb-cr-6ca">
             <objects>
-                <viewController id="yZC-2T-yV4" sceneMemberID="viewController">
+                <viewController id="yZC-2T-yV4" customClass="AddItemViewController" customModule="BDDMobile_List" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cZR-aK-h5b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,6 +122,9 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="IRq-Ji-qiL"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="nPv-Xl-gG9"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="ToT-2F-dN5" id="u0V-YK-SA7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TCi-cc-dTV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
+class ItemListViewController: UIViewController {
 
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -103,10 +103,9 @@ class ViewController: UIViewController {
         
     }
     
-    /*@IBAction func addItem(_ sender: Any) {
+    @IBAction func addItem(_ sender: Any) {
         showAlert()
-        
-    }*/
+    }
     
     //MARK: View Setup
     func setupConstraints() {
@@ -129,7 +128,7 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController : UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+extension ItemListViewController : UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredItems.count
     }
@@ -160,7 +159,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UISearchB
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { (action, index) in
-            self.showAlert(isEditing: true, itemIndex: index)
+            self.performSegue(withIdentifier: "editItem", sender: nil)
         }
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
             
@@ -191,10 +190,39 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UISearchB
         tableView.reloadData()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "addItem"){
+            let navigation = segue.destination as! UINavigationController
+            let delegateVC = navigation.topViewController as! AddItemViewController
+            delegateVC.delegate = self
+        }
+        else if (segue.identifier == "editItem"){
+            let navigation = segue.destination as! UINavigationController
+            let delegateVC = navigation.topViewController as! AddItemViewController
+            delegateVC.delegate = self
+        }
+    }
+    
 }
 
 extension Item {
     func toggleChecked() {
         self.checked = !self.checked
     }
+}
+
+extension ItemListViewController : AddItemViewControllerDelegate {
+    func addItemViewControllerDidCancel(_ controller: AddItemViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func addItemViewController(_ controller: AddItemViewController, didFinishAddingItem item: Item) {
+        //
+    }
+    
+    func addItemViewController(_ controller: AddItemViewController, didFinishEditingItem item: Item) {
+        //
+    }
+    
+    
 }
