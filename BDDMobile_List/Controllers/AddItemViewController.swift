@@ -14,7 +14,12 @@ class AddItemViewController: UIViewController {
     var delegate : AddItemViewControllerDelegate?
     var managedContext: NSManagedObjectContext!
     var appDelegate: AppDelegate!
+    var itemToEdit : Item?
+    var indexPath : IndexPath?
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var descriptionTextField: UITextField!
+    @IBOutlet weak var categoryTextField: UITextField!
+    @IBOutlet weak var tagsTextField: UITextField!
     
     
     
@@ -23,6 +28,13 @@ class AddItemViewController: UIViewController {
         
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         managedContext = appDelegate.persistentContainer.viewContext
+        
+        if(itemToEdit != nil){
+            self.title = "Edit an item"
+            nameTextField.text = itemToEdit?.name
+        } else {
+            self.title = "Add an item"
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -32,10 +44,21 @@ class AddItemViewController: UIViewController {
     }
     
     @IBAction func done(_ sender: Any) {
-        let newItem = Item(context: managedContext)
-        newItem.name = nameTextField.text
-        print(newItem)
-        //delegate?.addItemViewController(self, didFinishAddingItem: newItem)
+        if(itemToEdit == nil){
+            let newItem = Item(context: managedContext)
+            newItem.name = nameTextField.text
+            newItem.desc = descriptionTextField.text
+            /*let category = Category(context: managedContext)
+             category.name = categoryTextField.text
+             newItem.category = category*/
+            
+            print(newItem)
+            delegate?.addItemViewController(self)
+        } else {
+            itemToEdit?.name = nameTextField.text!
+            delegate?.editItemViewController(self, withItem: itemToEdit!, atIndexPath: indexPath!)
+        }
+        
     }
     /*
     // MARK: - Navigation
@@ -52,6 +75,6 @@ class AddItemViewController: UIViewController {
 
 protocol AddItemViewControllerDelegate : class {
     func addItemViewControllerDidCancel(_ controller: AddItemViewController)
-    func addItemViewController(_ controller: AddItemViewController, didFinishAddingItem item: Item)
-    func addItemViewController(_ controller: AddItemViewController, didFinishEditingItem item: Item)
+    func addItemViewController(_ controller: AddItemViewController)
+    func editItemViewController(_ controller: AddItemViewController, withItem itemEdit: Item, atIndexPath indexPath: IndexPath)
 }

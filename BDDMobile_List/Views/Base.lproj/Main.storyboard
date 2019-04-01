@@ -56,6 +56,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="VsC-MQ-1Lo">
                             <connections>
                                 <action selector="addItem:" destination="BYZ-38-t0r" id="30r-nS-Sim"/>
+                                <segue destination="BCQ-Tq-II7" kind="presentation" identifier="addItem" id="8Nb-gO-h26"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -83,7 +84,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the category of the task" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rmS-g1-idu">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the description of the task" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rmS-g1-idu">
                                 <rect key="frame" x="5" y="146" width="365" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -93,8 +94,14 @@
                                 <rect key="frame" x="147" y="202" width="81" height="30"/>
                                 <state key="normal" title="Add Images"/>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tags" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ln-X9-uU2">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ln-X9-uU2">
                                 <rect key="frame" x="5" y="258" width="365" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tags" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KqC-A5-YkM">
+                                <rect key="frame" x="5" y="314" width="365" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -102,10 +109,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="KqC-A5-YkM" firstAttribute="leading" secondItem="Gan-YQ-8O8" secondAttribute="leading" constant="5" id="184-su-5Gg"/>
                             <constraint firstItem="4Ln-X9-uU2" firstAttribute="leading" secondItem="Gan-YQ-8O8" secondAttribute="leading" constant="5" id="7Cr-3m-xdm"/>
                             <constraint firstItem="ToT-2F-dN5" firstAttribute="top" secondItem="Gan-YQ-8O8" secondAttribute="top" constant="26" id="AcQ-WW-KrI"/>
+                            <constraint firstItem="KqC-A5-YkM" firstAttribute="top" secondItem="4Ln-X9-uU2" secondAttribute="bottom" constant="26" id="OaI-7b-Lhu"/>
                             <constraint firstItem="ToT-2F-dN5" firstAttribute="leading" secondItem="Gan-YQ-8O8" secondAttribute="leading" constant="5" id="Pr6-j3-jJm"/>
                             <constraint firstItem="rmS-g1-idu" firstAttribute="top" secondItem="ToT-2F-dN5" secondAttribute="bottom" constant="26" id="RmA-5e-QF8"/>
+                            <constraint firstItem="Gan-YQ-8O8" firstAttribute="trailing" secondItem="KqC-A5-YkM" secondAttribute="trailing" constant="5" id="SQj-Sl-u12"/>
                             <constraint firstItem="Gan-YQ-8O8" firstAttribute="trailing" secondItem="ToT-2F-dN5" secondAttribute="trailing" constant="5" id="SmW-YD-EVY"/>
                             <constraint firstItem="Gan-YQ-8O8" firstAttribute="trailing" secondItem="4Ln-X9-uU2" secondAttribute="trailing" constant="5" id="WE7-fr-hFL"/>
                             <constraint firstItem="rmS-g1-idu" firstAttribute="centerX" secondItem="cZR-aK-h5b" secondAttribute="centerX" id="ami-2q-80z"/>
@@ -119,11 +129,22 @@
                         <viewLayoutGuide key="safeArea" id="Gan-YQ-8O8"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Item" id="Rz8-Ix-vZf">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="IRq-Ji-qiL"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="nPv-Xl-gG9"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="IRq-Ji-qiL">
+                            <connections>
+                                <action selector="cancel:" destination="yZC-2T-yV4" id="Jji-ip-Q5O"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="nPv-Xl-gG9">
+                            <connections>
+                                <action selector="done:" destination="yZC-2T-yV4" id="IQy-xF-lcx"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="categoryTextField" destination="4Ln-X9-uU2" id="0db-Vj-nY6"/>
+                        <outlet property="descriptionTextField" destination="rmS-g1-idu" id="Sor-WJ-gzt"/>
                         <outlet property="nameTextField" destination="ToT-2F-dN5" id="u0V-YK-SA7"/>
+                        <outlet property="tagsTextField" destination="KqC-A5-YkM" id="NBm-63-Mng"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TCi-cc-dTV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -167,4 +188,7 @@
             <point key="canvasLocation" x="2404" y="-173.16341829085459"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="8Nb-gO-h26"/>
+    </inferredMetricsTieBreakers>
 </document>

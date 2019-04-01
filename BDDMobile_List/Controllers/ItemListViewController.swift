@@ -159,7 +159,7 @@ extension ItemListViewController : UITableViewDelegate, UITableViewDataSource, U
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { (action, index) in
-            self.performSegue(withIdentifier: "editItem", sender: nil)
+            self.performSegue(withIdentifier: "editItem", sender: index)
         }
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
             
@@ -194,11 +194,14 @@ extension ItemListViewController : UITableViewDelegate, UITableViewDataSource, U
         if (segue.identifier == "addItem"){
             let navigation = segue.destination as! UINavigationController
             let delegateVC = navigation.topViewController as! AddItemViewController
+            delegateVC.itemToEdit = nil
             delegateVC.delegate = self
         }
         else if (segue.identifier == "editItem"){
             let navigation = segue.destination as! UINavigationController
             let delegateVC = navigation.topViewController as! AddItemViewController
+            delegateVC.indexPath = sender as! IndexPath
+            delegateVC.itemToEdit = items[(sender! as AnyObject).row]
             delegateVC.delegate = self
         }
     }
@@ -212,16 +215,29 @@ extension Item {
 }
 
 extension ItemListViewController : AddItemViewControllerDelegate {
+    
     func addItemViewControllerDidCancel(_ controller: AddItemViewController) {
+        print("Cancel")
         dismiss(animated: true, completion: nil)
     }
     
-    func addItemViewController(_ controller: AddItemViewController, didFinishAddingItem item: Item) {
-        //
+    func addItemViewController(_ controller: AddItemViewController) {
+        self.appDelegate.saveContext()
+        self.items = self.appDelegate.loadContext()
+        self.filteredItems = self.items
+        self.tableView.reloadData()
+        dismiss(animated: true, completion: nil)
     }
     
-    func addItemViewController(_ controller: AddItemViewController, didFinishEditingItem item: Item) {
-        //
+    func editItemViewController(_ controller: AddItemViewController, withItem itemEdit: Item, atIndexPath indexPath: IndexPath ) {
+        self.items[indexPath.row] = itemEdit
+        
+        self.appDelegate.saveContext()
+        self.items = self.appDelegate.loadContext()
+        
+        self.filteredItems = self.items
+        self.tableView.reloadData()
+        dismiss(animated: true, completion: nil)
     }
     
     
