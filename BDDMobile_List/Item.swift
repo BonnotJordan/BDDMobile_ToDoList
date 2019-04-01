@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class ItemCell {
+class Item {
     var name: String
     var isChecked: Bool
     

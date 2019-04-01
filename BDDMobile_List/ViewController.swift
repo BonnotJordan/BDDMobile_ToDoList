@@ -11,11 +11,15 @@ import UIKit
 class ViewController: UIViewController {
 
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-    var items = Array<ItemCell>()
+    var items = Array<Item>()
+    var filteredItems = Array<Item>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
+        filteredItems = items
         // Do any additional setup after loading the view, typically from a nib.
         
         
@@ -28,7 +32,7 @@ class ViewController: UIViewController {
                 let alertController = UIAlertController(title: "Doing", message: "Edit item ?", preferredStyle: UIAlertController.Style.alert)
                 alertController.addTextField(configurationHandler: { (textField) in
                     textField.placeholder = "Enter your todo"
-                    textField.text = self.items[itemIndex2.item].name
+                    textField.text = self.filteredItems[itemIndex2.item].name
                 })
                 let okAction = UIAlertAction(title: "Ok", style: .default) {
                     (action) in
@@ -36,6 +40,8 @@ class ViewController: UIViewController {
                     let newItemText = textField.text!
                     if(!newItemText.isEmpty){
                         self.items[itemIndex2.item].name = newItemText
+                        
+                        self.filteredItems = self.items
                         self.tableView.reloadData()
                     }
                     
@@ -55,7 +61,8 @@ class ViewController: UIViewController {
                 let textField = alertController.textFields![0] as UITextField
                 let newItemText = textField.text!
                 if(!newItemText.isEmpty){
-                    self.items.append(ItemCell(text: newItemText))
+                    self.items.append(Item(text: newItemText))
+                    self.filteredItems = self.items
                     self.tableView.reloadData()
                 }
                 
@@ -87,11 +94,11 @@ class ViewController: UIViewController {
         navigationBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true*/
     }
     
-    func configureCheckmark(for cell: UITableViewCell, withItem item : ItemCell){
+    func configureCheckmark(for cell: UITableViewCell, withItem item : Item){
         cell.accessoryType = item.isChecked ? .checkmark : .none
     }
     
-    func configureText(for cell: UITableViewCell, withItem item: ItemCell) {
+    func configureText(for cell: UITableViewCell, withItem item: Item) {
         cell.textLabel?.text = item.name
     }
     
@@ -99,15 +106,15 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController : UITableViewDelegate, UITableViewDataSource {
+extension ViewController : UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return filteredItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier")!
-        configureText(for: cell, withItem: items[indexPath.item])
-        configureCheckmark(for: cell,withItem: items[indexPath.item])
+        configureText(for: cell, withItem: filteredItems[indexPath.item])
+        configureCheckmark(for: cell,withItem: filteredItems[indexPath.item])
         return cell
     }
     
@@ -118,7 +125,8 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        items.remove(at: indexPath.item)
+        items.remove(at: indexPath.row)
+        filteredItems = items
         tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
     }
     
@@ -127,8 +135,12 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
             self.showAlert(isEditing: true, itemIndex: index)
         }
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
-            self.items.remove(at: indexPath.item)
-            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            
+//            tableView.deleteRows(at: [indexPath], with: .automatic)
+            self.items.remove(at: indexPath.row)
+            self.filteredItems = self.items
+            tableView.reloadData()
+            
         }
         
         edit.backgroundColor = .lightGray
@@ -137,6 +149,14 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         return [delete, edit]
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        filteredItems = searchText.isEmpty ? items : items.filter { ( item : Item) -> Bool in
+            return item.name.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        }
+        
+        tableView.reloadData()
+    }
     
 }
 
