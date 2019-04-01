@@ -103,10 +103,10 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func addItem(_ sender: Any) {
+    /*@IBAction func addItem(_ sender: Any) {
         showAlert()
         
-    }
+    }*/
     
     //MARK: View Setup
     func setupConstraints() {
