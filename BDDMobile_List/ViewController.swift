@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
 
@@ -15,11 +16,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var items = Array<Item>()
     var filteredItems = Array<Item>()
+    var managedContext: NSManagedObjectContext!
+    var appDelegate: AppDelegate!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         searchBar.delegate = self
+        
+        appDelegate = UIApplication.shared.delegate as! AppDelegate
+        managedContext = appDelegate.persistentContainer.viewContext
+        
+        self.items = self.appDelegate.loadContext()
         filteredItems = items
+        tableView.reloadData()
+        
         // Do any additional setup after loading the view, typically from a nib.
         
         
@@ -41,6 +52,9 @@ class ViewController: UIViewController {
                     if(!newItemText.isEmpty){
                         self.items[itemIndex2.item].name = newItemText
                         
+                        self.appDelegate.saveContext()
+                        self.items = self.appDelegate.loadContext()
+                        
                         self.filteredItems = self.items
                         self.tableView.reloadData()
                     }
@@ -61,7 +75,16 @@ class ViewController: UIViewController {
                 let textField = alertController.textFields![0] as UITextField
                 let newItemText = textField.text!
                 if(!newItemText.isEmpty){
-                    self.items.append(Item(text: newItemText))
+                
+                    
+                    let item = Item(context: self.managedContext)
+                    item.name = newItemText
+                    item.checked = false
+
+                    self.appDelegate.saveContext()
+                    self.items = self.appDelegate.loadContext()
+                    
+                    
                     self.filteredItems = self.items
                     self.tableView.reloadData()
                 }
@@ -95,7 +118,7 @@ class ViewController: UIViewController {
     }
     
     func configureCheckmark(for cell: UITableViewCell, withItem item : Item){
-        cell.accessoryType = item.isChecked ? .checkmark : .none
+        cell.accessoryType = item.checked ? .checkmark : .none
     }
     
     func configureText(for cell: UITableViewCell, withItem item: Item) {
@@ -113,8 +136,8 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UISearchB
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier")!
-        configureText(for: cell, withItem: filteredItems[indexPath.item])
-        configureCheckmark(for: cell,withItem: filteredItems[indexPath.item])
+        configureText(for: cell, withItem: filteredItems[indexPath.item] )
+        configureCheckmark(for: cell,withItem: filteredItems[indexPath.item] )
         return cell
     }
     
@@ -126,6 +149,11 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UISearchB
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         items.remove(at: indexPath.row)
+        
+        self.managedContext.delete(items[indexPath.row])
+        self.appDelegate.saveContext()
+        self.items = self.appDelegate.loadContext()
+        
         filteredItems = items
         tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
     }
@@ -137,7 +165,12 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UISearchB
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
             
 //            tableView.deleteRows(at: [indexPath], with: .automatic)
-            self.items.remove(at: indexPath.row)
+            
+            
+            self.managedContext.delete(self.items[indexPath.row])
+            self.appDelegate.saveContext()
+            self.items = self.appDelegate.loadContext()
+            
             self.filteredItems = self.items
             tableView.reloadData()
             
@@ -152,7 +185,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UISearchB
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         filteredItems = searchText.isEmpty ? items : items.filter { ( item : Item) -> Bool in
-            return item.name.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+            return item.name!.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
         }
         
         tableView.reloadData()
@@ -160,3 +193,8 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UISearchB
     
 }
 
+extension Item {
+    func toggleChecked() {
+        self.checked = !self.checked
+    }
+}
