@@ -17,11 +17,10 @@ class AddItemViewController: UIViewController {
     var appDelegate: AppDelegate!
     var itemToEdit : Item?
     var indexPath : IndexPath?
-    var search : SearchTextField?
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
-    @IBOutlet weak var categoryTextField: UITextField!
-    @IBOutlet weak var tagsTextField: UITextField!
+    @IBOutlet weak var categoryTextField: SearchTextField!
+    @IBOutlet weak var tagsTextField: SearchTextField!
     
     
     
