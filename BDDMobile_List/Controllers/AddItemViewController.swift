@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SearchTextField
 
 class AddItemViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class AddItemViewController: UIViewController {
     var appDelegate: AppDelegate!
     var itemToEdit : Item?
     var indexPath : IndexPath?
+    var search : SearchTextField?
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var categoryTextField: UITextField!

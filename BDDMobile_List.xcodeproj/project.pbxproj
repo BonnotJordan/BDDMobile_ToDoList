@@ -14,6 +14,7 @@
 		08BCF7C8221FF0C40020659D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08BCF7C7221FF0C40020659D /* Assets.xcassets */; };
 		08BCF7CB221FF0C40020659D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08BCF7C9221FF0C40020659D /* LaunchScreen.storyboard */; };
 		08E48746223FF25A00EE7F55 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08E48744223FF25A00EE7F55 /* Model.xcdatamodeld */; };
+		7A70C2E906F2B7C1A5EF9E7D /* Pods_BDDMobile_List.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 895A3BD6081853949A528451 /* Pods_BDDMobile_List.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		08BCF7CA221FF0C40020659D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		08BCF7CC221FF0C40020659D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08E48745223FF25A00EE7F55 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		5DC58A56C2E06B19BDB5E7D1 /* Pods-BDDMobile_List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BDDMobile_List.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BDDMobile_List/Pods-BDDMobile_List.debug.xcconfig"; sourceTree = "<group>"; };
+		895A3BD6081853949A528451 /* Pods_BDDMobile_List.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BDDMobile_List.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F83B14C6C0CF474E56CCF3E4 /* Pods-BDDMobile_List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BDDMobile_List.release.xcconfig"; path = "Pods/Target Support Files/Pods-BDDMobile_List/Pods-BDDMobile_List.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A70C2E906F2B7C1A5EF9E7D /* Pods_BDDMobile_List.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				08BCF7BF221FF0C30020659D /* BDDMobile_List */,
 				08BCF7BE221FF0C30020659D /* Products */,
+				E5C12DF1C753DE24C14C50B0 /* Pods */,
+				5ECAE2F124C5A2290A63DCF5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +101,23 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		5ECAE2F124C5A2290A63DCF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				895A3BD6081853949A528451 /* Pods_BDDMobile_List.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E5C12DF1C753DE24C14C50B0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5DC58A56C2E06B19BDB5E7D1 /* Pods-BDDMobile_List.debug.xcconfig */,
+				F83B14C6C0CF474E56CCF3E4 /* Pods-BDDMobile_List.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -101,9 +125,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 08BCF7CF221FF0C40020659D /* Build configuration list for PBXNativeTarget "BDDMobile_List" */;
 			buildPhases = (
+				9C9063C4D94236EC4EBC31AD /* [CP] Check Pods Manifest.lock */,
 				08BCF7B9221FF0C30020659D /* Sources */,
 				08BCF7BA221FF0C30020659D /* Frameworks */,
 				08BCF7BB221FF0C30020659D /* Resources */,
+				4ED2A18BE08CA0B0EDA624E5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -159,6 +185,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4ED2A18BE08CA0B0EDA624E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BDDMobile_List/Pods-BDDMobile_List-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SearchTextField.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BDDMobile_List/Pods-BDDMobile_List-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C9063C4D94236EC4EBC31AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BDDMobile_List-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		08BCF7B9221FF0C30020659D /* Sources */ = {
@@ -312,6 +377,7 @@
 		};
 		08BCF7D0221FF0C40020659D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DC58A56C2E06B19BDB5E7D1 /* Pods-BDDMobile_List.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -329,6 +395,7 @@
 		};
 		08BCF7D1221FF0C40020659D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F83B14C6C0CF474E56CCF3E4 /* Pods-BDDMobile_List.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
