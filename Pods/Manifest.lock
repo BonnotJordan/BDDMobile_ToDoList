@@ -1,16 +1,20 @@
 PODS:
   - SearchTextField (1.2.2)
+  - TaggerKit (0.5.0)
 
 DEPENDENCIES:
   - SearchTextField
+  - TaggerKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - SearchTextField
+    - TaggerKit
 
 SPEC CHECKSUMS:
   SearchTextField: a0992739d4b05dcbb40fb3a5cc6526bd991bdd23
+  TaggerKit: 3404402e7ac4c73aa96949e6f10c6e066ddf792a
 
-PODFILE CHECKSUM: 9ed8c4864dd4ffdf35230312d9a6cb2852b96fbd
+PODFILE CHECKSUM: feec319f02249bd7fce5fbdc1a87d64908eb2da7
 
 COCOAPODS: 1.5.2

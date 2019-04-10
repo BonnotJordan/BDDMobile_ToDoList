@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import SearchTextField
+import TaggerKit
 
 class AddItemViewController: UIViewController {
 
@@ -36,6 +37,9 @@ class AddItemViewController: UIViewController {
         } else {
             self.title = "Add an item"
         }
+        
+        categoryTextField.filterStrings(["Hello","Bonjour","Bonswer","Hola"])
+        tagsTextField.filterStrings(["test","tag","oui","non"])
 
         // Do any additional setup after loading the view.
     }

@@ -7,108 +7,169 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18ABF749F4588FFDBB4BBFAE524B652D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		5CACC6BE56E36D83BDD672163305456C /* Pods-BDDMobile_List-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ED06E23E3E35F5B20551A82578C007 /* Pods-BDDMobile_List-dummy.m */; };
-		95169835DBDFEB27D929BC85DB817642 /* Pods-BDDMobile_List-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1427170C2E09EAE6657D9AE86B261DAC /* Pods-BDDMobile_List-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C80AC29A4793CBB57DE648C8BE7D2823 /* SearchTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F931C4AF020FAF403D0957CA8D6F8811 /* SearchTextField-dummy.m */; };
-		CDA2F913E98696B702605CF74E489799 /* SearchTextField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DFA573812232E801446A4BE92E0798D /* SearchTextField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E5254856DBBDAA9748F71585EF0AD7A7 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADBDD8A2CC7723573E4982B4BF4C28B /* SearchTextField.swift */; };
-		EDA88D007B63D3F93E5C3D935C9F9B78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		02B8C852B36D2222F61DD16EF2100BC4 /* SearchTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A89A0CBE03F6D25FF5684B381DD1A8A /* SearchTextField-dummy.m */; };
+		02C12605D179B7C5F9210B5704C46C96 /* LayoutAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE8E48F40AEE3C6272654713C0FC8C3 /* LayoutAlignment.swift */; };
+		067CA42772634881AF7CBB7DB74ABA60 /* addIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = E68999468861C189E7109622FD9945A8 /* addIcon.png */; };
+		1C09F6B61265B228AA2B095CB91A363A /* TKCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93BCE333D19F70C86935EC230094A5 /* TKCollectionView.swift */; };
+		1F589D3F130084E55F68E6A119BD7636 /* TaggerKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 02976A846F1316EDBF157A68D9A1F686 /* TaggerKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2066A46FCF09DB609752830938FC8505 /* TKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A090B5288964C10EDC37603AA4FEE038 /* TKTextField.swift */; };
+		221059D956C322A3A815DA8751DBB132 /* TaggerKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F77B21F49D691C8C017786DE1AEB7742 /* TaggerKit.bundle */; };
+		2F6E16C8E6AD720615126D664DA5468D /* LayoutInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456FC18B832F6F35B5EEBEA516BEBFCC /* LayoutInfo.swift */; };
+		3A5574BAF1E2E2998DAFECD64C1131D6 /* TaggerKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AECEEB7FBB667E55C53AFB4E85B125 /* TaggerKit-dummy.m */; };
+		502251D2E5CB70612A08A8ACBC920FAB /* Pods-BDDMobile_List-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1427170C2E09EAE6657D9AE86B261DAC /* Pods-BDDMobile_List-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		52C63BCA1B6E622F609626BE1DF208EF /* addIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = E68999468861C189E7109622FD9945A8 /* addIcon.png */; };
+		53EC83A2EDEBF85C6B23C9EB7BDC0572 /* TagCellLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C366C75C4A7E0C3713B817D6AA09153 /* TagCellLayoutDelegate.swift */; };
+		55D9218EDE423102CCC94DCA0304D612 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9172BEFEDD43CAE35D3821ACC298F17 /* SearchTextField.swift */; };
+		6E4437557AFC4ABD92D19EDC6BA9C1CA /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33C7E67D30010F9C0426ACC79AD97F2 /* UIViewController+.swift */; };
+		79C6EEAF2E96544B437907C9783BE966 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
+		7ED527931E8C59AB4AEAC0FAFFDB84FC /* SearchTextField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B433C34176CDEAB6AFACF1AF74E6AEB /* SearchTextField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		851C5F046528FAA6FA9CA5EA339D6C76 /* Pods-BDDMobile_List-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ED06E23E3E35F5B20551A82578C007 /* Pods-BDDMobile_List-dummy.m */; };
+		8D304AA55B106AF31DA84D23C86DE5F1 /* TKTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B2C94FA2A2F44F96313255730D2034 /* TKTagCell.swift */; };
+		92214070A098F4B6DF797B2FE3C03C7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
+		93A9F91F150661641D9597C4F3467BA5 /* TKCollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AAAB1E5B45998F9EA25B756E8A96D2 /* TKCollectionView+.swift */; };
+		9BE45B69B2E4306E1B5218D8AC34AC68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
+		B0C81465691F8BBFE8AF9D72D70B151C /* TagCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531DCF3C965ACE9332D2EAD2F3BBE031 /* TagCellLayout.swift */; };
+		B24C946690F09267CD1F1B471EC5A203 /* TKTagButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D3B598D72A9FD55E3D5FB89CA2EFE /* TKTagButton.swift */; };
+		C81C281F2A6639683370BB2BCC054951 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */; };
+		E2882E9D6C45D77D83D9AA61E52F258B /* removeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = FE98086B091CCB8F2A8EE02C33B55923 /* removeIcon.png */; };
+		F774E85B36C2AA5AD74ADCD4285E6BC6 /* removeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = FE98086B091CCB8F2A8EE02C33B55923 /* removeIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E42B720314A0C054813697C70BACB0A1 /* PBXContainerItemProxy */ = {
+		712F46CC17DED8E47B6BC6A23E6AB01E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4E14ED46298EC5AC2B271A6C22A0EB7B;
+			remoteGlobalIDString = B2EA97C0E2BE8A2CF9744C165EA9132E;
 			remoteInfo = SearchTextField;
+		};
+		A62C942260E2A12180EF250201E300DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56C74E255E1FEE71C47F49A68C4C14A1;
+			remoteInfo = "TaggerKit-TaggerKit";
+		};
+		E2EEE673C8D2C5107168BC127ECA7702 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B02F39719387FE498214C23D49BED4C6;
+			remoteInfo = TaggerKit;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00AAAB1E5B45998F9EA25B756E8A96D2 /* TKCollectionView+.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TKCollectionView+.swift"; path = "TaggerKit/Classes/Source/CollectionView/TKCollectionView+.swift"; sourceTree = "<group>"; };
+		02976A846F1316EDBF157A68D9A1F686 /* TaggerKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TaggerKit-umbrella.h"; sourceTree = "<group>"; };
 		036609F80389E5A37ABB8BCD201C9869 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BB9FFF63F166F6640A71EEEC36E8571 /* Pods_BDDMobile_List.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BDDMobile_List.framework; path = "Pods-BDDMobile_List.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FE8E48F40AEE3C6272654713C0FC8C3 /* LayoutAlignment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutAlignment.swift; path = TaggerKit/Classes/Source/TagLayout/LayoutAlignment.swift; sourceTree = "<group>"; };
 		1427170C2E09EAE6657D9AE86B261DAC /* Pods-BDDMobile_List-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BDDMobile_List-umbrella.h"; sourceTree = "<group>"; };
+		1B8D3B598D72A9FD55E3D5FB89CA2EFE /* TKTagButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TKTagButton.swift; path = TaggerKit/Classes/Source/CollectionViewCell/TKTagButton.swift; sourceTree = "<group>"; };
 		202085C4BF325E3803B3C41EA6B484A5 /* Pods-BDDMobile_List-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BDDMobile_List-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3194CB3B12135260164F38E0917DC567 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C366C75C4A7E0C3713B817D6AA09153 /* TagCellLayoutDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TagCellLayoutDelegate.swift; path = TaggerKit/Classes/Source/TagLayout/TagCellLayoutDelegate.swift; sourceTree = "<group>"; };
+		2FB415C5A961D28BB50BF787FB961E6C /* SearchTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SearchTextField.framework; path = SearchTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31EB7E092A43ABDD44D894947587DF34 /* Pods-BDDMobile_List-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BDDMobile_List-resources.sh"; sourceTree = "<group>"; };
 		3252BBD5409AD03C9358751709261BA2 /* Pods-BDDMobile_List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BDDMobile_List.debug.xcconfig"; sourceTree = "<group>"; };
+		3B433C34176CDEAB6AFACF1AF74E6AEB /* SearchTextField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SearchTextField-umbrella.h"; sourceTree = "<group>"; };
 		3BCF5F35DE934ECD69F25F54B0720B01 /* Pods-BDDMobile_List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BDDMobile_List.release.xcconfig"; sourceTree = "<group>"; };
-		460B3F7E64FED369C11B836B4B42146A /* Pods_BDDMobile_List.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BDDMobile_List.framework; path = "Pods-BDDMobile_List.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		4154AA0036F79597442B4E3E4E3996F7 /* SearchTextField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SearchTextField.xcconfig; sourceTree = "<group>"; };
+		456FC18B832F6F35B5EEBEA516BEBFCC /* LayoutInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutInfo.swift; path = TaggerKit/Classes/Source/TagLayout/LayoutInfo.swift; sourceTree = "<group>"; };
+		48B2C94FA2A2F44F96313255730D2034 /* TKTagCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TKTagCell.swift; path = TaggerKit/Classes/Source/CollectionViewCell/TKTagCell.swift; sourceTree = "<group>"; };
+		531DCF3C965ACE9332D2EAD2F3BBE031 /* TagCellLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TagCellLayout.swift; path = TaggerKit/Classes/Source/TagLayout/TagCellLayout.swift; sourceTree = "<group>"; };
+		57D024F4DE8D6E037793C3BD22613CC5 /* TaggerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TaggerKit.framework; path = TaggerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62262C4EFFBED899E766D779FE190113 /* Pods-BDDMobile_List-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BDDMobile_List-frameworks.sh"; sourceTree = "<group>"; };
-		7B552479B9DC3F86E3CD01B4BA093388 /* SearchTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SearchTextField.framework; path = SearchTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8DFA573812232E801446A4BE92E0798D /* SearchTextField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SearchTextField-umbrella.h"; sourceTree = "<group>"; };
+		73EA04C7EC999AC14146D9F124E8F5C2 /* TaggerKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TaggerKit.xcconfig; sourceTree = "<group>"; };
+		8A89A0CBE03F6D25FF5684B381DD1A8A /* SearchTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SearchTextField-dummy.m"; sourceTree = "<group>"; };
+		8FE33CEE153A315214ECC04FE9B758D5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		908E902E026C5C22904CF9014A5604AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		913D5764820A19DF7116E717B9FB6E76 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A090B5288964C10EDC37603AA4FEE038 /* TKTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TKTextField.swift; path = TaggerKit/Classes/Source/TextField/TKTextField.swift; sourceTree = "<group>"; };
+		AF275131181AD44B78140F4F8BEACC77 /* ResourceBundle-TaggerKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-TaggerKit-Info.plist"; sourceTree = "<group>"; };
+		B33C7E67D30010F9C0426ACC79AD97F2 /* UIViewController+.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+.swift"; path = "TaggerKit/Classes/Source/Extensions/UIViewController+.swift"; sourceTree = "<group>"; };
 		B9EE89D25BE177E0911B4575BE2B8AED /* Pods-BDDMobile_List-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BDDMobile_List-acknowledgements.plist"; sourceTree = "<group>"; };
+		BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		C431A2E54FF7219CCF765D9C13F0822E /* SearchTextField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SearchTextField-prefix.pch"; sourceTree = "<group>"; };
 		C5727A80171A97C80EB64100D38D9036 /* Pods-BDDMobile_List.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BDDMobile_List.modulemap"; sourceTree = "<group>"; };
-		D106022306DDFBC1E6838DC2805717A1 /* SearchTextField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SearchTextField-prefix.pch"; sourceTree = "<group>"; };
-		DADBDD8A2CC7723573E4982B4BF4C28B /* SearchTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SearchTextField.swift; path = SearchTextField/Classes/SearchTextField.swift; sourceTree = "<group>"; };
+		C8A92389297BA29BE2F50B09158B30D9 /* SearchTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SearchTextField.modulemap; sourceTree = "<group>"; };
+		C9172BEFEDD43CAE35D3821ACC298F17 /* SearchTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SearchTextField.swift; path = SearchTextField/Classes/SearchTextField.swift; sourceTree = "<group>"; };
+		D0548882A0AEBEDEA83C15657E7D7929 /* TaggerKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TaggerKit-prefix.pch"; sourceTree = "<group>"; };
+		E4AECEEB7FBB667E55C53AFB4E85B125 /* TaggerKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TaggerKit-dummy.m"; sourceTree = "<group>"; };
 		E4ED06E23E3E35F5B20551A82578C007 /* Pods-BDDMobile_List-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BDDMobile_List-dummy.m"; sourceTree = "<group>"; };
-		F931C4AF020FAF403D0957CA8D6F8811 /* SearchTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SearchTextField-dummy.m"; sourceTree = "<group>"; };
-		F9769D97A09EBF1C866249D36A949B2C /* SearchTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SearchTextField.modulemap; sourceTree = "<group>"; };
-		FAB4D19CDF01F9E90698F88B562AB87A /* SearchTextField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SearchTextField.xcconfig; sourceTree = "<group>"; };
+		E68999468861C189E7109622FD9945A8 /* addIcon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = addIcon.png; path = TaggerKit/Assets/addIcon.png; sourceTree = "<group>"; };
+		EAC97A74BF958608AEF47B0DA8648B60 /* TaggerKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TaggerKit.modulemap; sourceTree = "<group>"; };
+		F77B21F49D691C8C017786DE1AEB7742 /* TaggerKit.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = TaggerKit.bundle; path = "TaggerKit-TaggerKit.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA93BCE333D19F70C86935EC230094A5 /* TKCollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TKCollectionView.swift; path = TaggerKit/Classes/Source/CollectionView/TKCollectionView.swift; sourceTree = "<group>"; };
+		FE98086B091CCB8F2A8EE02C33B55923 /* removeIcon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = removeIcon.png; path = TaggerKit/Assets/removeIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0AD4DF872E6FC8A3D66C76687DA0496B /* Frameworks */ = {
+		470B315387CE8B2AFEAD2B31C443E38C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDA88D007B63D3F93E5C3D935C9F9B78 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B82987D8077D24529BF93678BC07C643 /* Frameworks */ = {
+		4731AE33ADE1F3BAF9BBB642076E91ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18ABF749F4588FFDBB4BBFAE524B652D /* Foundation.framework in Frameworks */,
+				79C6EEAF2E96544B437907C9783BE966 /* Foundation.framework in Frameworks */,
+				C81C281F2A6639683370BB2BCC054951 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68EA7880F18CCD5018ABC745281B18DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92214070A098F4B6DF797B2FE3C03C7C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74E84A2BFC590ABBA0BF704486ECDBA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BE45B69B2E4306E1B5218D8AC34AC68 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0369F6394E1C0582BF08D11A0B8DEE61 /* SearchTextField */ = {
+		0F0D5CB881142DAEB5EE52C9949A9BBA /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				DADBDD8A2CC7723573E4982B4BF4C28B /* SearchTextField.swift */,
-				48C5CA86DD839CF5220D1BCC81704B2A /* Support Files */,
-			);
-			name = SearchTextField;
-			path = SearchTextField;
-			sourceTree = "<group>";
-		};
-		4333979626A383A8E65188CCEC93EC91 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				460B3F7E64FED369C11B836B4B42146A /* Pods_BDDMobile_List.framework */,
-				7B552479B9DC3F86E3CD01B4BA093388 /* SearchTextField.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		48C5CA86DD839CF5220D1BCC81704B2A /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				3194CB3B12135260164F38E0917DC567 /* Info.plist */,
-				F9769D97A09EBF1C866249D36A949B2C /* SearchTextField.modulemap */,
-				FAB4D19CDF01F9E90698F88B562AB87A /* SearchTextField.xcconfig */,
-				F931C4AF020FAF403D0957CA8D6F8811 /* SearchTextField-dummy.m */,
-				D106022306DDFBC1E6838DC2805717A1 /* SearchTextField-prefix.pch */,
-				8DFA573812232E801446A4BE92E0798D /* SearchTextField-umbrella.h */,
+				913D5764820A19DF7116E717B9FB6E76 /* Info.plist */,
+				C8A92389297BA29BE2F50B09158B30D9 /* SearchTextField.modulemap */,
+				4154AA0036F79597442B4E3E4E3996F7 /* SearchTextField.xcconfig */,
+				8A89A0CBE03F6D25FF5684B381DD1A8A /* SearchTextField-dummy.m */,
+				C431A2E54FF7219CCF765D9C13F0822E /* SearchTextField-prefix.pch */,
+				3B433C34176CDEAB6AFACF1AF74E6AEB /* SearchTextField-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SearchTextField";
 			sourceTree = "<group>";
 		};
-		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
+		10DEDCB394BAA0C7FEDEBE330207B074 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
+				908E902E026C5C22904CF9014A5604AD /* Foundation.framework */,
+				BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10DEDCB394BAA0C7FEDEBE330207B074 /* iOS */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		6E4A98FD29196CCB0E2D97FA6A54B1EB /* Targets Support Files */ = {
@@ -123,27 +184,85 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				C2F4B51807996A845941D41828B2F016 /* Pods */,
-				4333979626A383A8E65188CCEC93EC91 /* Products */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				C07C83E304D6A372B246FDB2FAE1075A /* Pods */,
+				98E037B11A6470ABB8EDB6B462CAD223 /* Products */,
 				6E4A98FD29196CCB0E2D97FA6A54B1EB /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		826F7CF0FF22CDE210FC16B1A03D17A8 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				5E0D919E635D23B70123790B8308F8EF /* iOS */,
+				8FE33CEE153A315214ECC04FE9B758D5 /* Info.plist */,
+				AF275131181AD44B78140F4F8BEACC77 /* ResourceBundle-TaggerKit-Info.plist */,
+				EAC97A74BF958608AEF47B0DA8648B60 /* TaggerKit.modulemap */,
+				73EA04C7EC999AC14146D9F124E8F5C2 /* TaggerKit.xcconfig */,
+				E4AECEEB7FBB667E55C53AFB4E85B125 /* TaggerKit-dummy.m */,
+				D0548882A0AEBEDEA83C15657E7D7929 /* TaggerKit-prefix.pch */,
+				02976A846F1316EDBF157A68D9A1F686 /* TaggerKit-umbrella.h */,
 			);
-			name = Frameworks;
+			name = "Support Files";
+			path = "../Target Support Files/TaggerKit";
 			sourceTree = "<group>";
 		};
-		C2F4B51807996A845941D41828B2F016 /* Pods */ = {
+		84DF42A5791AB8616703883C3AEE812D /* TaggerKit */ = {
 			isa = PBXGroup;
 			children = (
-				0369F6394E1C0582BF08D11A0B8DEE61 /* SearchTextField */,
+				0FE8E48F40AEE3C6272654713C0FC8C3 /* LayoutAlignment.swift */,
+				456FC18B832F6F35B5EEBEA516BEBFCC /* LayoutInfo.swift */,
+				531DCF3C965ACE9332D2EAD2F3BBE031 /* TagCellLayout.swift */,
+				2C366C75C4A7E0C3713B817D6AA09153 /* TagCellLayoutDelegate.swift */,
+				FA93BCE333D19F70C86935EC230094A5 /* TKCollectionView.swift */,
+				00AAAB1E5B45998F9EA25B756E8A96D2 /* TKCollectionView+.swift */,
+				1B8D3B598D72A9FD55E3D5FB89CA2EFE /* TKTagButton.swift */,
+				48B2C94FA2A2F44F96313255730D2034 /* TKTagCell.swift */,
+				A090B5288964C10EDC37603AA4FEE038 /* TKTextField.swift */,
+				B33C7E67D30010F9C0426ACC79AD97F2 /* UIViewController+.swift */,
+				C6FF3DDBADF447CFADFA4A975149D641 /* Resources */,
+				826F7CF0FF22CDE210FC16B1A03D17A8 /* Support Files */,
+			);
+			name = TaggerKit;
+			path = TaggerKit;
+			sourceTree = "<group>";
+		};
+		98E037B11A6470ABB8EDB6B462CAD223 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0BB9FFF63F166F6640A71EEEC36E8571 /* Pods_BDDMobile_List.framework */,
+				2FB415C5A961D28BB50BF787FB961E6C /* SearchTextField.framework */,
+				F77B21F49D691C8C017786DE1AEB7742 /* TaggerKit.bundle */,
+				57D024F4DE8D6E037793C3BD22613CC5 /* TaggerKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9CA8CCE6904FD24C4149ECE21C85A656 /* SearchTextField */ = {
+			isa = PBXGroup;
+			children = (
+				C9172BEFEDD43CAE35D3821ACC298F17 /* SearchTextField.swift */,
+				0F0D5CB881142DAEB5EE52C9949A9BBA /* Support Files */,
+			);
+			name = SearchTextField;
+			path = SearchTextField;
+			sourceTree = "<group>";
+		};
+		C07C83E304D6A372B246FDB2FAE1075A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9CA8CCE6904FD24C4149ECE21C85A656 /* SearchTextField */,
+				84DF42A5791AB8616703883C3AEE812D /* TaggerKit */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C6FF3DDBADF447CFADFA4A975149D641 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E68999468861C189E7109622FD9945A8 /* addIcon.png */,
+				FE98086B091CCB8F2A8EE02C33B55923 /* removeIcon.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		E4B72A2321C68088D6334BD57F5EDBD7 /* Pods-BDDMobile_List */ = {
@@ -167,32 +286,76 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		041CBE31BAF3D7AEA7167255CDCE8B9C /* Headers */ = {
+		1D24AD1FF4C25FD006FF7F00F30B381F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95169835DBDFEB27D929BC85DB817642 /* Pods-BDDMobile_List-umbrella.h in Headers */,
+				502251D2E5CB70612A08A8ACBC920FAB /* Pods-BDDMobile_List-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9BC9B25F1B2B93C475C882FAF841019D /* Headers */ = {
+		4B919238E0738338247A5DF2A28B09CC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDA2F913E98696B702605CF74E489799 /* SearchTextField-umbrella.h in Headers */,
+				7ED527931E8C59AB4AEAC0FAFFDB84FC /* SearchTextField-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60CC672CE4C94B287E62E674F2932AFF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F589D3F130084E55F68E6A119BD7636 /* TaggerKit-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4E14ED46298EC5AC2B271A6C22A0EB7B /* SearchTextField */ = {
+		56C74E255E1FEE71C47F49A68C4C14A1 /* TaggerKit-TaggerKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A772781E31E7687E5971B64E276D19E4 /* Build configuration list for PBXNativeTarget "SearchTextField" */;
+			buildConfigurationList = 644BBFCE13CF29D04CE1943E8046C86F /* Build configuration list for PBXNativeTarget "TaggerKit-TaggerKit" */;
 			buildPhases = (
-				28C543AABDF5911DD250C4B293B27036 /* Sources */,
-				0AD4DF872E6FC8A3D66C76687DA0496B /* Frameworks */,
-				9BC9B25F1B2B93C475C882FAF841019D /* Headers */,
+				1BF6EF6CD90D79DE62780818E505E456 /* Sources */,
+				470B315387CE8B2AFEAD2B31C443E38C /* Frameworks */,
+				D2E502CF6B7EC4478169AA6BEA064CBA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TaggerKit-TaggerKit";
+			productName = "TaggerKit-TaggerKit";
+			productReference = F77B21F49D691C8C017786DE1AEB7742 /* TaggerKit.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		B02F39719387FE498214C23D49BED4C6 /* TaggerKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 019FD418D59F1C4093B2F394AE6A22A7 /* Build configuration list for PBXNativeTarget "TaggerKit" */;
+			buildPhases = (
+				EA15821156CFA67386FDD709F0F1BDBB /* Sources */,
+				4731AE33ADE1F3BAF9BBB642076E91ED /* Frameworks */,
+				068C16055F48FBB6679AD5CF0128A2B6 /* Resources */,
+				60CC672CE4C94B287E62E674F2932AFF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3B52D363FAB51DF4BB78D3549152ACB4 /* PBXTargetDependency */,
+			);
+			name = TaggerKit;
+			productName = TaggerKit;
+			productReference = 57D024F4DE8D6E037793C3BD22613CC5 /* TaggerKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B2EA97C0E2BE8A2CF9744C165EA9132E /* SearchTextField */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D88C79CFB1FCDFBBFD2F0683E3DD91B6 /* Build configuration list for PBXNativeTarget "SearchTextField" */;
+			buildPhases = (
+				558243C4598517A7A187EA3B9837CFDD /* Sources */,
+				68EA7880F18CCD5018ABC745281B18DD /* Frameworks */,
+				4B919238E0738338247A5DF2A28B09CC /* Headers */,
 			);
 			buildRules = (
 			);
@@ -200,25 +363,26 @@
 			);
 			name = SearchTextField;
 			productName = SearchTextField;
-			productReference = 7B552479B9DC3F86E3CD01B4BA093388 /* SearchTextField.framework */;
+			productReference = 2FB415C5A961D28BB50BF787FB961E6C /* SearchTextField.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		614096B80E947430BD0857568E70C999 /* Pods-BDDMobile_List */ = {
+		BD5F96FCCF1F121AC3EA53137CC1D939 /* Pods-BDDMobile_List */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 08C8FAACCA5614D040ECC7968FD5C6FA /* Build configuration list for PBXNativeTarget "Pods-BDDMobile_List" */;
+			buildConfigurationList = 77E896020C4C353FC9A8500A4A966646 /* Build configuration list for PBXNativeTarget "Pods-BDDMobile_List" */;
 			buildPhases = (
-				C8962326B7DD0A34EE72FA913BBA260A /* Sources */,
-				B82987D8077D24529BF93678BC07C643 /* Frameworks */,
-				041CBE31BAF3D7AEA7167255CDCE8B9C /* Headers */,
+				CF356474CF3DA5BCDCC6C6F876461FD5 /* Sources */,
+				74E84A2BFC590ABBA0BF704486ECDBA5 /* Frameworks */,
+				1D24AD1FF4C25FD006FF7F00F30B381F /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B684F73C3C4AC90371E361D14F47025C /* PBXTargetDependency */,
+				ECD64FE663137CE33318A0D2B6902BC0 /* PBXTargetDependency */,
+				380AAD50EA683B373275335D9889F457 /* PBXTargetDependency */,
 			);
 			name = "Pods-BDDMobile_List";
 			productName = "Pods-BDDMobile_List";
-			productReference = 460B3F7E64FED369C11B836B4B42146A /* Pods_BDDMobile_List.framework */;
+			productReference = 0BB9FFF63F166F6640A71EEEC36E8571 /* Pods_BDDMobile_List.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -238,82 +402,107 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 4333979626A383A8E65188CCEC93EC91 /* Products */;
+			productRefGroup = 98E037B11A6470ABB8EDB6B462CAD223 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				614096B80E947430BD0857568E70C999 /* Pods-BDDMobile_List */,
-				4E14ED46298EC5AC2B271A6C22A0EB7B /* SearchTextField */,
+				BD5F96FCCF1F121AC3EA53137CC1D939 /* Pods-BDDMobile_List */,
+				B2EA97C0E2BE8A2CF9744C165EA9132E /* SearchTextField */,
+				B02F39719387FE498214C23D49BED4C6 /* TaggerKit */,
+				56C74E255E1FEE71C47F49A68C4C14A1 /* TaggerKit-TaggerKit */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXSourcesBuildPhase section */
-		28C543AABDF5911DD250C4B293B27036 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+/* Begin PBXResourcesBuildPhase section */
+		068C16055F48FBB6679AD5CF0128A2B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C80AC29A4793CBB57DE648C8BE7D2823 /* SearchTextField-dummy.m in Sources */,
-				E5254856DBBDAA9748F71585EF0AD7A7 /* SearchTextField.swift in Sources */,
+				52C63BCA1B6E622F609626BE1DF208EF /* addIcon.png in Resources */,
+				E2882E9D6C45D77D83D9AA61E52F258B /* removeIcon.png in Resources */,
+				221059D956C322A3A815DA8751DBB132 /* TaggerKit.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C8962326B7DD0A34EE72FA913BBA260A /* Sources */ = {
+		D2E502CF6B7EC4478169AA6BEA064CBA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				067CA42772634881AF7CBB7DB74ABA60 /* addIcon.png in Resources */,
+				F774E85B36C2AA5AD74ADCD4285E6BC6 /* removeIcon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1BF6EF6CD90D79DE62780818E505E456 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CACC6BE56E36D83BDD672163305456C /* Pods-BDDMobile_List-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		558243C4598517A7A187EA3B9837CFDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02B8C852B36D2222F61DD16EF2100BC4 /* SearchTextField-dummy.m in Sources */,
+				55D9218EDE423102CCC94DCA0304D612 /* SearchTextField.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF356474CF3DA5BCDCC6C6F876461FD5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				851C5F046528FAA6FA9CA5EA339D6C76 /* Pods-BDDMobile_List-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA15821156CFA67386FDD709F0F1BDBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02C12605D179B7C5F9210B5704C46C96 /* LayoutAlignment.swift in Sources */,
+				2F6E16C8E6AD720615126D664DA5468D /* LayoutInfo.swift in Sources */,
+				B0C81465691F8BBFE8AF9D72D70B151C /* TagCellLayout.swift in Sources */,
+				53EC83A2EDEBF85C6B23C9EB7BDC0572 /* TagCellLayoutDelegate.swift in Sources */,
+				3A5574BAF1E2E2998DAFECD64C1131D6 /* TaggerKit-dummy.m in Sources */,
+				93A9F91F150661641D9597C4F3467BA5 /* TKCollectionView+.swift in Sources */,
+				1C09F6B61265B228AA2B095CB91A363A /* TKCollectionView.swift in Sources */,
+				B24C946690F09267CD1F1B471EC5A203 /* TKTagButton.swift in Sources */,
+				8D304AA55B106AF31DA84D23C86DE5F1 /* TKTagCell.swift in Sources */,
+				2066A46FCF09DB609752830938FC8505 /* TKTextField.swift in Sources */,
+				6E4437557AFC4ABD92D19EDC6BA9C1CA /* UIViewController+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B684F73C3C4AC90371E361D14F47025C /* PBXTargetDependency */ = {
+		380AAD50EA683B373275335D9889F457 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TaggerKit;
+			target = B02F39719387FE498214C23D49BED4C6 /* TaggerKit */;
+			targetProxy = E2EEE673C8D2C5107168BC127ECA7702 /* PBXContainerItemProxy */;
+		};
+		3B52D363FAB51DF4BB78D3549152ACB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "TaggerKit-TaggerKit";
+			target = 56C74E255E1FEE71C47F49A68C4C14A1 /* TaggerKit-TaggerKit */;
+			targetProxy = A62C942260E2A12180EF250201E300DC /* PBXContainerItemProxy */;
+		};
+		ECD64FE663137CE33318A0D2B6902BC0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SearchTextField;
-			target = 4E14ED46298EC5AC2B271A6C22A0EB7B /* SearchTextField */;
-			targetProxy = E42B720314A0C054813697C70BACB0A1 /* PBXContainerItemProxy */;
+			target = B2EA97C0E2BE8A2CF9744C165EA9132E /* SearchTextField */;
+			targetProxy = 712F46CC17DED8E47B6BC6A23E6AB01E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		048E12B2FBB8A2D5DFA45AAE0E5A52B5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FAB4D19CDF01F9E90698F88B562AB87A /* SearchTextField.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SearchTextField/SearchTextField-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SearchTextField/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/SearchTextField/SearchTextField.modulemap";
-				PRODUCT_MODULE_NAME = SearchTextField;
-				PRODUCT_NAME = SearchTextField;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		063198AB09B9CDB3A695432FC17AD8CA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -372,9 +561,9 @@
 			};
 			name = Release;
 		};
-		1DEB7280EFC666CB747EEE37F085FDCF /* Release */ = {
+		10947FD8F5E117BF77CADCABA168DF95 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FAB4D19CDF01F9E90698F88B562AB87A /* SearchTextField.xcconfig */;
+			baseConfigurationReference = 4154AA0036F79597442B4E3E4E3996F7 /* SearchTextField.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -400,20 +589,34 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
+			name = Debug;
+		};
+		2A27916A86E58759A4E7DD096F64200D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73EA04C7EC999AC14146D9F124E8F5C2 /* TaggerKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TaggerKit";
+				INFOPLIST_FILE = "Target Support Files/TaggerKit/ResourceBundle-TaggerKit-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = TaggerKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
 			name = Release;
 		};
-		821703CA404373C17D532DBB427F5FDF /* Debug */ = {
+		835F6A84298594C527E3244D6C7D2E5F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3252BBD5409AD03C9358751709261BA2 /* Pods-BDDMobile_List.debug.xcconfig */;
+			baseConfigurationReference = 73EA04C7EC999AC14146D9F124E8F5C2 /* TaggerKit.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -424,25 +627,23 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-BDDMobile_List/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/TaggerKit/TaggerKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TaggerKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BDDMobile_List/Pods-BDDMobile_List.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/TaggerKit/TaggerKit.modulemap";
+				PRODUCT_MODULE_NAME = TaggerKit;
+				PRODUCT_NAME = TaggerKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -512,7 +713,100 @@
 			};
 			name = Debug;
 		};
-		D72B4C1927AA377F731161041A5376E3 /* Release */ = {
+		D4344CA934ED024413BF9F2FE90E086A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3252BBD5409AD03C9358751709261BA2 /* Pods-BDDMobile_List.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BDDMobile_List/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BDDMobile_List/Pods-BDDMobile_List.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E3CBE0E54010C63F6B752327BCB327A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73EA04C7EC999AC14146D9F124E8F5C2 /* TaggerKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TaggerKit";
+				INFOPLIST_FILE = "Target Support Files/TaggerKit/ResourceBundle-TaggerKit-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = TaggerKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		EA184BDE84D2274948CCAF64BEE017B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4154AA0036F79597442B4E3E4E3996F7 /* SearchTextField.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SearchTextField/SearchTextField-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SearchTextField/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SearchTextField/SearchTextField.modulemap";
+				PRODUCT_MODULE_NAME = SearchTextField;
+				PRODUCT_NAME = SearchTextField;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F7B64C2A85C3E3D437AFCD4A938B7E03 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3BCF5F35DE934ECD69F25F54B0720B01 /* Pods-BDDMobile_List.release.xcconfig */;
 			buildSettings = {
@@ -552,14 +846,52 @@
 			};
 			name = Release;
 		};
+		FBEEF46A09571C48E3F7B041F79E8175 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73EA04C7EC999AC14146D9F124E8F5C2 /* TaggerKit.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TaggerKit/TaggerKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TaggerKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/TaggerKit/TaggerKit.modulemap";
+				PRODUCT_MODULE_NAME = TaggerKit;
+				PRODUCT_NAME = TaggerKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		08C8FAACCA5614D040ECC7968FD5C6FA /* Build configuration list for PBXNativeTarget "Pods-BDDMobile_List" */ = {
+		019FD418D59F1C4093B2F394AE6A22A7 /* Build configuration list for PBXNativeTarget "TaggerKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				821703CA404373C17D532DBB427F5FDF /* Debug */,
-				D72B4C1927AA377F731161041A5376E3 /* Release */,
+				835F6A84298594C527E3244D6C7D2E5F /* Debug */,
+				FBEEF46A09571C48E3F7B041F79E8175 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -573,11 +905,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A772781E31E7687E5971B64E276D19E4 /* Build configuration list for PBXNativeTarget "SearchTextField" */ = {
+		644BBFCE13CF29D04CE1943E8046C86F /* Build configuration list for PBXNativeTarget "TaggerKit-TaggerKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				048E12B2FBB8A2D5DFA45AAE0E5A52B5 /* Debug */,
-				1DEB7280EFC666CB747EEE37F085FDCF /* Release */,
+				E3CBE0E54010C63F6B752327BCB327A7 /* Debug */,
+				2A27916A86E58759A4E7DD096F64200D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		77E896020C4C353FC9A8500A4A966646 /* Build configuration list for PBXNativeTarget "Pods-BDDMobile_List" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4344CA934ED024413BF9F2FE90E086A /* Debug */,
+				F7B64C2A85C3E3D437AFCD4A938B7E03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D88C79CFB1FCDFBBFD2F0683E3DD91B6 /* Build configuration list for PBXNativeTarget "SearchTextField" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10947FD8F5E117BF77CADCABA168DF95 /* Debug */,
+				EA184BDE84D2274948CCAF64BEE017B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -11,5 +11,6 @@ target 'BDDMobile_List' do
   # Pods for BDDMobile_List
   
   pod "SearchTextField"
+  pod 'TaggerKit'
 
 end
