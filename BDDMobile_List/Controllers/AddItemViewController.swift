@@ -18,10 +18,14 @@ class AddItemViewController: UIViewController {
     var appDelegate: AppDelegate!
     var itemToEdit : Item?
     var indexPath : IndexPath?
+    var tagCollection = TKCollectionView()
+    var tagCollectionSelected = TKCollectionView()
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var categoryTextField: SearchTextField!
-    @IBOutlet weak var tagsTextField: SearchTextField!
+    @IBOutlet weak var tagsTextField: TKTextField!
+    @IBOutlet weak var tagView: UIView!
+    @IBOutlet weak var selectedTagView: UIView!
     
     
     
@@ -39,7 +43,22 @@ class AddItemViewController: UIViewController {
         }
         
         categoryTextField.filterStrings(["Hello","Bonjour","Bonswer","Hola"])
-        tagsTextField.filterStrings(["test","tag","oui","non"])
+        
+        
+        add(tagCollection, toView: tagView)
+        tagCollection.tags = ["Some", "Tag", "For", "You"]
+        
+        add(tagCollectionSelected, toView: selectedTagView)
+        tagCollectionSelected.tags = ["Some", "Tag", "For", "You"]
+        
+        tagCollectionSelected.action = .removeTag
+        
+        
+        tagsTextField.sender = tagCollection
+        tagsTextField.receiver = tagCollectionSelected
+        
+        tagCollection.action = .addTag
+        tagCollection.receiver = tagCollectionSelected
 
         // Do any additional setup after loading the view.
     }

@@ -91,17 +91,29 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6LJ-iD-zfB">
-                                <rect key="frame" x="147" y="202" width="81" height="30"/>
+                                <rect key="frame" x="147" y="188" width="81" height="30"/>
                                 <state key="normal" title="Add Images"/>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ln-X9-uU2" customClass="SearchTextField" customModule="SearchTextField">
-                                <rect key="frame" x="5" y="258" width="365" height="30"/>
+                                <rect key="frame" x="5" y="230" width="365" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tags" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KqC-A5-YkM" customClass="SearchTextField" customModule="SearchTextField">
-                                <rect key="frame" x="5" y="314" width="365" height="30"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Yq-W3-kah">
+                                <rect key="frame" x="0.0" y="330" width="375" height="171"/>
+                                <connections>
+                                    <segue destination="wek-n7-Gn0" kind="embed" id="0FU-OH-FUO"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nmv-cN-9qd">
+                                <rect key="frame" x="0.0" y="513" width="375" height="154"/>
+                                <connections>
+                                    <segue destination="RAv-GL-f5D" kind="embed" id="cqf-RX-4yR"/>
+                                </connections>
+                            </containerView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tags" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SPb-hJ-hAX" customClass="TKTextField" customModule="TaggerKit">
+                                <rect key="frame" x="5" y="272" width="365" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -109,22 +121,30 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="KqC-A5-YkM" firstAttribute="leading" secondItem="Gan-YQ-8O8" secondAttribute="leading" constant="5" id="184-su-5Gg"/>
+                            <constraint firstItem="4Yq-W3-kah" firstAttribute="leading" secondItem="Gan-YQ-8O8" secondAttribute="leading" id="0tQ-DZ-wam"/>
+                            <constraint firstItem="Nmv-cN-9qd" firstAttribute="top" secondItem="4Yq-W3-kah" secondAttribute="bottom" constant="12" id="0tf-F9-Ezm"/>
+                            <constraint firstItem="Gan-YQ-8O8" firstAttribute="bottom" secondItem="Nmv-cN-9qd" secondAttribute="bottom" id="5rw-z0-N2K"/>
                             <constraint firstItem="4Ln-X9-uU2" firstAttribute="leading" secondItem="Gan-YQ-8O8" secondAttribute="leading" constant="5" id="7Cr-3m-xdm"/>
                             <constraint firstItem="ToT-2F-dN5" firstAttribute="top" secondItem="Gan-YQ-8O8" secondAttribute="top" constant="26" id="AcQ-WW-KrI"/>
-                            <constraint firstItem="KqC-A5-YkM" firstAttribute="top" secondItem="4Ln-X9-uU2" secondAttribute="bottom" constant="26" id="OaI-7b-Lhu"/>
+                            <constraint firstItem="SPb-hJ-hAX" firstAttribute="leading" secondItem="Gan-YQ-8O8" secondAttribute="leading" constant="5" id="KhO-53-aRk"/>
+                            <constraint firstItem="Nmv-cN-9qd" firstAttribute="top" secondItem="cZR-aK-h5b" secondAttribute="top" constant="513" id="MHe-lv-0Tg"/>
+                            <constraint firstItem="Gan-YQ-8O8" firstAttribute="trailing" secondItem="Nmv-cN-9qd" secondAttribute="trailing" id="NMe-bd-vGQ"/>
                             <constraint firstItem="ToT-2F-dN5" firstAttribute="leading" secondItem="Gan-YQ-8O8" secondAttribute="leading" constant="5" id="Pr6-j3-jJm"/>
                             <constraint firstItem="rmS-g1-idu" firstAttribute="top" secondItem="ToT-2F-dN5" secondAttribute="bottom" constant="26" id="RmA-5e-QF8"/>
-                            <constraint firstItem="Gan-YQ-8O8" firstAttribute="trailing" secondItem="KqC-A5-YkM" secondAttribute="trailing" constant="5" id="SQj-Sl-u12"/>
                             <constraint firstItem="Gan-YQ-8O8" firstAttribute="trailing" secondItem="ToT-2F-dN5" secondAttribute="trailing" constant="5" id="SmW-YD-EVY"/>
                             <constraint firstItem="Gan-YQ-8O8" firstAttribute="trailing" secondItem="4Ln-X9-uU2" secondAttribute="trailing" constant="5" id="WE7-fr-hFL"/>
+                            <constraint firstItem="SPb-hJ-hAX" firstAttribute="top" secondItem="4Ln-X9-uU2" secondAttribute="bottom" constant="12" id="XMu-fB-sZS"/>
+                            <constraint firstItem="4Yq-W3-kah" firstAttribute="top" secondItem="SPb-hJ-hAX" secondAttribute="bottom" constant="28" id="Xxg-UV-HA0"/>
                             <constraint firstItem="rmS-g1-idu" firstAttribute="centerX" secondItem="cZR-aK-h5b" secondAttribute="centerX" id="ami-2q-80z"/>
-                            <constraint firstItem="4Ln-X9-uU2" firstAttribute="top" secondItem="6LJ-iD-zfB" secondAttribute="bottom" constant="26" id="fb2-sW-Iuq"/>
+                            <constraint firstItem="4Ln-X9-uU2" firstAttribute="top" secondItem="6LJ-iD-zfB" secondAttribute="bottom" constant="12" id="fb2-sW-Iuq"/>
+                            <constraint firstItem="Gan-YQ-8O8" firstAttribute="trailing" secondItem="4Yq-W3-kah" secondAttribute="trailing" id="gPb-IO-MAD"/>
                             <constraint firstItem="6LJ-iD-zfB" firstAttribute="centerX" secondItem="cZR-aK-h5b" secondAttribute="centerX" id="mAb-Ji-mhy"/>
                             <constraint firstItem="rmS-g1-idu" firstAttribute="leading" secondItem="Gan-YQ-8O8" secondAttribute="leading" constant="5" id="mI6-QB-LxU"/>
-                            <constraint firstItem="6LJ-iD-zfB" firstAttribute="top" secondItem="rmS-g1-idu" secondAttribute="bottom" constant="26" id="pZJ-9q-6Ot"/>
+                            <constraint firstItem="Gan-YQ-8O8" firstAttribute="trailing" secondItem="SPb-hJ-hAX" secondAttribute="trailing" constant="5" id="nra-Vc-Y74"/>
+                            <constraint firstItem="6LJ-iD-zfB" firstAttribute="top" secondItem="rmS-g1-idu" secondAttribute="bottom" constant="12" id="pZJ-9q-6Ot"/>
                             <constraint firstItem="Gan-YQ-8O8" firstAttribute="trailing" secondItem="rmS-g1-idu" secondAttribute="trailing" constant="5" id="quB-9r-NGg"/>
                             <constraint firstItem="ToT-2F-dN5" firstAttribute="centerX" secondItem="cZR-aK-h5b" secondAttribute="centerX" id="vaS-eH-S2q"/>
+                            <constraint firstItem="Nmv-cN-9qd" firstAttribute="leading" secondItem="Gan-YQ-8O8" secondAttribute="leading" id="zCk-NH-amY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gan-YQ-8O8"/>
                     </view>
@@ -144,7 +164,9 @@
                         <outlet property="categoryTextField" destination="4Ln-X9-uU2" id="0db-Vj-nY6"/>
                         <outlet property="descriptionTextField" destination="rmS-g1-idu" id="Sor-WJ-gzt"/>
                         <outlet property="nameTextField" destination="ToT-2F-dN5" id="u0V-YK-SA7"/>
-                        <outlet property="tagsTextField" destination="KqC-A5-YkM" id="NBm-63-Mng"/>
+                        <outlet property="selectedTagView" destination="Nmv-cN-9qd" id="IgT-Su-1jp"/>
+                        <outlet property="tagView" destination="4Yq-W3-kah" id="wNe-8O-PMH"/>
+                        <outlet property="tagsTextField" destination="SPb-hJ-hAX" id="VDc-RN-JxF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TCi-cc-dTV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -186,6 +208,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5kC-Qo-xUL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2404" y="-173.16341829085459"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aS2-Hy-mwv">
+            <objects>
+                <viewController id="wek-n7-Gn0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A2a-iW-Fyd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="171"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BqS-xh-5pk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xLj-FW-hJY">
+            <objects>
+                <viewController id="RAv-GL-f5D" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hJM-ut-iBZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="154"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cmd-cu-oZn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
