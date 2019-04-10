@@ -26,6 +26,8 @@ class AddItemViewController: UIViewController {
     @IBOutlet weak var tagsTextField: TKTextField!
     @IBOutlet weak var tagView: UIView!
     @IBOutlet weak var selectedTagView: UIView!
+    var tags = Array<Tag>()
+    var tmpTags = Array<Tag>()
     
     
     
@@ -49,7 +51,7 @@ class AddItemViewController: UIViewController {
         tagCollection.tags = ["Some", "Tag", "For", "You"]
         
         add(tagCollectionSelected, toView: selectedTagView)
-        tagCollectionSelected.tags = ["Some", "Tag", "For", "You"]
+        tagCollectionSelected.tags = []
         
         tagCollectionSelected.action = .removeTag
         
@@ -59,8 +61,27 @@ class AddItemViewController: UIViewController {
         
         tagCollection.action = .addTag
         tagCollection.receiver = tagCollectionSelected
+        
+        tagCollection.delegate = self
+        tagCollectionSelected.delegate = self
+        
+        
+        
 
         // Do any additional setup after loading the view.
+    }
+    
+    
+    override func tagIsBeingAdded(name: String?) {
+        // Example: save testCollection.tags to UserDefault
+        print("added \(name!)")
+        let newTag = Tag(context: managedContext)
+        newTag.name = name
+        tmpTags.append(newTag)
+    }
+    
+    override func tagIsBeingRemoved(name: String?) {
+        print("removed \(name!)")
     }
     
     @IBAction func cancel(_ sender: Any) {
@@ -72,9 +93,9 @@ class AddItemViewController: UIViewController {
             let newItem = Item(context: managedContext)
             newItem.name = nameTextField.text
             newItem.desc = descriptionTextField.text
-            /*let category = Category(context: managedContext)
-             category.name = categoryTextField.text
-             newItem.category = category*/
+            let category = Category(context: managedContext)
+            category.name = categoryTextField.text
+            newItem.category = category
             
             print(newItem)
             delegate?.addItemViewController(self)
