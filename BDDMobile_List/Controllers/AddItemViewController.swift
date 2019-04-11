@@ -90,15 +90,22 @@ class AddItemViewController: UIViewController {
     
     @IBAction func done(_ sender: Any) {
         if(itemToEdit == nil){
-            let newItem = Item(context: managedContext)
-            newItem.name = nameTextField.text
-            newItem.desc = descriptionTextField.text
-            let category = Category(context: managedContext)
-            category.name = categoryTextField.text
-            newItem.category = category
+            if(nameTextField.text!.isEmpty || descriptionTextField.text!.isEmpty) {
+                let alert = UIAlertController(title: "Impossible", message: "Veuillez remplir au moins le titre et la description", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                let newItem = Item(context: managedContext)
+                newItem.name = nameTextField.text
+                newItem.desc = descriptionTextField.text
+                let category = Category(context: managedContext)
+                category.name = categoryTextField.text
+                newItem.category = category
+                
+                print(newItem)
+                delegate?.addItemViewController(self)
+            }
             
-            print(newItem)
-            delegate?.addItemViewController(self)
         } else {
             itemToEdit?.name = nameTextField.text!
             delegate?.editItemViewController(self, withItem: itemToEdit!, atIndexPath: indexPath!)
