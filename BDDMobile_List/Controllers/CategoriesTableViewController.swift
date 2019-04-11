@@ -15,12 +15,17 @@ class CategoriesTableViewController: UITableViewController {
     var managedContext: NSManagedObjectContext!
     var appDelegate: AppDelegate!
     
+    @IBAction func addCategory(_ sender: Any) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         managedContext = appDelegate.persistentContainer.viewContext
-
+        self.categories = self.appDelegate.loadContextCategories()
+        
     }
 
     // MARK: - Table view data source

@@ -318,7 +318,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Categories" id="ney-2t-tfp">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="KqM-XA-22I"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="KqM-XA-22I">
+                            <connections>
+                                <action selector="addCategory:" destination="qoc-Fp-tfZ" id="kYf-y3-YUB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oyX-bD-nCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
