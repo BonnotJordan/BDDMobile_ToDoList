@@ -33,6 +33,7 @@ class AddItemViewController: UIViewController {
     var arrayStrEditTags = Array<String>()
     
     var previousTags = Array<Tag>()
+    var previousTagsStr = Array<String>()
     
     
     
@@ -48,11 +49,15 @@ class AddItemViewController: UIViewController {
             descriptionTextField.text = itemToEdit?.desc
             categoryTextField.text = itemToEdit?.category?.name
             previousTags = itemToEdit?.tags?.tags?.allObjects as! Array<Tag>
-            var maxIndex = previousTags.count
-            for index in 0...maxIndex-1 {
-                let newTag = previousTags[index]
-                tmpTags.append(newTag)
+            let maxIndex = previousTags.count
+            if(maxIndex > 0) {
+                for index in 0...maxIndex-1 {
+                    let newTag = previousTags[index]
+                    tmpTags.append(newTag)
+                    previousTagsStr.append(newTag.name!)
+                }
             }
+            
             
             
             let tags : Tags = itemToEdit!.tags!
@@ -97,9 +102,6 @@ class AddItemViewController: UIViewController {
         
         tagCollection.delegate = self
         tagCollectionSelected.delegate = self
-        
-        
-        
 
         // Do any additional setup after loading the view.
     }
@@ -107,23 +109,24 @@ class AddItemViewController: UIViewController {
     
     override func tagIsBeingAdded(name: String?) {
         // Example: save testCollection.tags to UserDefault
-        
-        if(tagsStr.contains(name!)){
-            print("not adding \(name)")
+        if(tagsStr.contains(name!) || previousTagsStr.contains(name!)){
         } else {
             tagsStr.append(name!)
-            print("adding \(name)")
             let newTag = Tag(context: managedContext)
             newTag.name = name
             tmpTags.append(newTag)
-            
         }
         
     }
     
     override func tagIsBeingRemoved(name: String?) {
         print("removed \(name!)")
+        let indexOfName = previousTagsStr.firstIndex(of: name!) // 0
+        print("itemIndex \(index)")
+        previousTagsStr.remove(at: indexOfName!)
+        tmpTags.remove(at: indexOfName!)
     }
+    
     @IBAction func pickImage(_ sender: Any) {
         AttachmentHandler.shared.showAttachmentActionSheet(vc: self)
         AttachmentHandler.shared.imagePickedBlock = { (image) in
