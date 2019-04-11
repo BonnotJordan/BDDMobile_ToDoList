@@ -26,6 +26,7 @@ class AddItemViewController: UIViewController {
     @IBOutlet weak var tagsTextField: TKTextField!
     @IBOutlet weak var tagView: UIView!
     @IBOutlet weak var selectedTagView: UIView!
+    @IBOutlet weak var addImageButton: UIButton!
     var tags = Array<Tag>()
     var tmpTags = Array<Tag>()
     
@@ -82,6 +83,12 @@ class AddItemViewController: UIViewController {
     
     override func tagIsBeingRemoved(name: String?) {
         print("removed \(name!)")
+    }
+    @IBAction func pickImage(_ sender: Any) {
+        AttachmentHandler.shared.showAttachmentActionSheet(vc: self)
+        AttachmentHandler.shared.imagePickedBlock = { (image) in
+            print("IT WORKS !")
+        }
     }
     
     @IBAction func cancel(_ sender: Any) {
