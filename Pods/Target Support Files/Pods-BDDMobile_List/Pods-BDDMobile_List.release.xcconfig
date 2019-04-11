@@ -1,9 +1,9 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES $(inherited)
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/SearchTextField" "${PODS_CONFIGURATION_BUILD_DIR}/TaggerKit"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/NavigationDrawer" "${PODS_CONFIGURATION_BUILD_DIR}/SearchTextField" "${PODS_CONFIGURATION_BUILD_DIR}/TaggerKit" "${PODS_CONFIGURATION_BUILD_DIR}/VBRRollingPit"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/SearchTextField/SearchTextField.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/TaggerKit/TaggerKit.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "SearchTextField" -framework "TaggerKit"
+OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/NavigationDrawer/NavigationDrawer.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/SearchTextField/SearchTextField.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/TaggerKit/TaggerKit.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/VBRRollingPit/VBRRollingPit.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "NavigationDrawer" -framework "SearchTextField" -framework "TaggerKit" -framework "VBRRollingPit"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

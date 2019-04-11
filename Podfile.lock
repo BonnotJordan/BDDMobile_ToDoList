@@ -1,20 +1,28 @@
 PODS:
+  - NavigationDrawer (1.0.1)
   - SearchTextField (1.2.2)
   - TaggerKit (0.5.0)
+  - VBRRollingPit (1.0.1)
 
 DEPENDENCIES:
+  - NavigationDrawer
   - SearchTextField
   - TaggerKit
+  - VBRRollingPit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - NavigationDrawer
     - SearchTextField
     - TaggerKit
+    - VBRRollingPit
 
 SPEC CHECKSUMS:
+  NavigationDrawer: 45ed18696d0d2f4679d05af690040074f7df57da
   SearchTextField: a0992739d4b05dcbb40fb3a5cc6526bd991bdd23
   TaggerKit: 3404402e7ac4c73aa96949e6f10c6e066ddf792a
+  VBRRollingPit: 62a79cc663aeea6a196878b3a907056617f96b6a
 
-PODFILE CHECKSUM: feec319f02249bd7fce5fbdc1a87d64908eb2da7
+PODFILE CHECKSUM: b9f632db715c72b53dcc01df48e4a8d9b26802af
 
 COCOAPODS: 1.5.2

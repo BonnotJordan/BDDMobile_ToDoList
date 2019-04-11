@@ -10,7 +10,9 @@ target 'BDDMobile_List' do
 
   # Pods for BDDMobile_List
   
-  pod "SearchTextField"
+  pod 'SearchTextField'
   pod 'TaggerKit'
+  pod 'NavigationDrawer'
+  pod 'VBRRollingPit'
 
 end
