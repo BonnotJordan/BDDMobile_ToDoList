@@ -16,6 +16,7 @@
 		08BCF7C8221FF0C40020659D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08BCF7C7221FF0C40020659D /* Assets.xcassets */; };
 		08BCF7CB221FF0C40020659D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08BCF7C9221FF0C40020659D /* LaunchScreen.storyboard */; };
 		08E48746223FF25A00EE7F55 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08E48744223FF25A00EE7F55 /* Model.xcdatamodeld */; };
+		08F52641225F8FF400FA32CE /* TagslistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F52640225F8FF400FA32CE /* TagslistViewController.swift */; };
 		7A70C2E906F2B7C1A5EF9E7D /* Pods_BDDMobile_List.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 895A3BD6081853949A528451 /* Pods_BDDMobile_List.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		08BCF7CA221FF0C40020659D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		08BCF7CC221FF0C40020659D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08E48745223FF25A00EE7F55 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		08F52640225F8FF400FA32CE /* TagslistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagslistViewController.swift; sourceTree = "<group>"; };
 		5DC58A56C2E06B19BDB5E7D1 /* Pods-BDDMobile_List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BDDMobile_List.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BDDMobile_List/Pods-BDDMobile_List.debug.xcconfig"; sourceTree = "<group>"; };
 		895A3BD6081853949A528451 /* Pods_BDDMobile_List.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BDDMobile_List.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F83B14C6C0CF474E56CCF3E4 /* Pods-BDDMobile_List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BDDMobile_List.release.xcconfig"; path = "Pods/Target Support Files/Pods-BDDMobile_List/Pods-BDDMobile_List.release.xcconfig"; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				0860CF3B2252810900A6F03D /* AddItemViewController.swift */,
 				08BCF7C2221FF0C30020659D /* ItemListViewController.swift */,
 				0843B298225F7FF600DA8831 /* CategoriesTableViewController.swift */,
+				08F52640225F8FF400FA32CE /* TagslistViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				0843B299225F7FF600DA8831 /* CategoriesTableViewController.swift in Sources */,
 				08BCF7C1221FF0C30020659D /* AppDelegate.swift in Sources */,
 				08E48746223FF25A00EE7F55 /* Model.xcdatamodeld in Sources */,
+				08F52641225F8FF400FA32CE /* TagslistViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
