@@ -88,7 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // MARK: - Core Data Loading support
-    func loadContext () -> [Item] {
+    func loadContextItems () -> [Item] {
         let context = persistentContainer.viewContext
         let fetchRequest: NSFetchRequest<Item> = NSFetchRequest<Item>(entityName: "Item")
         do {
@@ -98,6 +98,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch let error as NSError{
             print("Could not fetch : \(error)")
             return [Item]()
+        }
+    }
+    
+    func loadContextCategories () -> [Category] {
+        let context = persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Category> = NSFetchRequest<Category>(entityName: "Category")
+        do {
+            let fetchedResults = try context.fetch(fetchRequest)
+            let results = fetchedResults
+            return results
+        } catch let error as NSError{
+            print("Could not fetch : \(error)")
+            return [Category]()
+        }
+    }
+    
+    func loadContextTags () -> [Tag] {
+        let context = persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Tag> = NSFetchRequest<Tag>(entityName: "Tag")
+        do {
+            let fetchedResults = try context.fetch(fetchRequest)
+            let results = fetchedResults
+            return results
+        } catch let error as NSError{
+            print("Could not fetch : \(error)")
+            return [Tag]()
         }
     }
 
