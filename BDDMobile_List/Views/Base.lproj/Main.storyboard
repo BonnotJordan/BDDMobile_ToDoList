@@ -379,7 +379,7 @@
         <!--Create a tag-->
         <scene sceneID="OpC-iO-dtk">
             <objects>
-                <viewController id="7mc-Q2-nI5" sceneMemberID="viewController">
+                <viewController id="7mc-Q2-nI5" customClass="AddTagViewController" customModule="BDDMobile_List" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qi8-7m-OVW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -387,8 +387,16 @@
                         <viewLayoutGuide key="safeArea" id="r5F-aC-D4l"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create a tag" id="LOx-HA-UdL">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Uwe-hS-UA3"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="yi8-lC-A7J"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Uwe-hS-UA3">
+                            <connections>
+                                <action selector="onCancel:" destination="7mc-Q2-nI5" id="wMW-hm-gMw"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="yi8-lC-A7J">
+                            <connections>
+                                <action selector="onDone:" destination="7mc-Q2-nI5" id="PWH-E4-a2z"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="87P-Zd-Lia" userLabel="First Responder" sceneMemberID="firstResponder"/>
