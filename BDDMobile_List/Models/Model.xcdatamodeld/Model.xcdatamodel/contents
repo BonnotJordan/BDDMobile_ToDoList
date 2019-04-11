@@ -24,8 +24,8 @@
         <attribute name="place" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" syncable="YES"/>
         <relationship name="directory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Directory" syncable="YES"/>
-        <relationship name="images" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Image" syncable="YES"/>
-        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" syncable="YES"/>
+        <relationship name="images" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" syncable="YES"/>
+        <relationship name="tags" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tags" syncable="YES"/>
     </entity>
     <entity name="Tag" representedClassName="Tag" syncable="YES" codeGenerationType="class">
         <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
@@ -33,11 +33,15 @@
         <attribute name="editDate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Tags" representedClassName="Tags" syncable="YES" codeGenerationType="class">
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Category" positionX="-19119.609375" positionY="-14875.87890625" width="128" height="90"/>
         <element name="Directory" positionX="-18927.33984375" positionY="-14868.92578125" width="128" height="90"/>
         <element name="Image" positionX="-18764.8203125" positionY="-14866.80859375" width="128" height="90"/>
-        <element name="Item" positionX="-18803.578125" positionY="-15487.4921875" width="128" height="195"/>
+        <element name="Item" positionX="-18803.578125" positionY="-15487.4921875" width="128" height="193"/>
         <element name="Tag" positionX="-18602.58203125" positionY="-14866.05859375" width="128" height="105"/>
+        <element name="Tags" positionX="-18527.78125" positionY="-15174.61328125" width="128" height="58"/>
     </elements>
 </model>

@@ -26,8 +26,11 @@ class AddItemViewController: UIViewController {
     @IBOutlet weak var tagsTextField: TKTextField!
     @IBOutlet weak var tagView: UIView!
     @IBOutlet weak var selectedTagView: UIView!
-    var tags = Array<Tag>()
+    var tags = NSSet()
     var tmpTags = Array<Tag>()
+    var tagsStr : Array<String> = Array<String>()
+    
+    var arrayStrEditTags = Array<String>()
     
     
     
@@ -40,8 +43,30 @@ class AddItemViewController: UIViewController {
         if(itemToEdit != nil){
             self.title = "Edit an item"
             nameTextField.text = itemToEdit?.name
+            descriptionTextField.text = itemToEdit?.desc
+            categoryTextField.text = itemToEdit?.category?.name
+            
+            
+            var tags : Tags = itemToEdit!.tags!
+            var tagsTags : NSSet = tags.tags!
+            var tagArray : Array<Tag> = tagsTags.allObjects as! Array<Tag>
+            var max = tagArray.count
+            print("maxIndex \(max)")
+            var tagsNameArray : Array<String> = Array<String>()
+            
+            if(max > 0){
+                for i in 0...max-1 {
+                    var tagName = tagArray[i].name
+                    tagsNameArray.append(tagName!)
+                }
+            }
+            
+            
+            
+            tagCollectionSelected.tags = tagsNameArray
         } else {
             self.title = "Add an item"
+            tagCollectionSelected.tags = []
         }
         
         categoryTextField.filterStrings(["Hello","Bonjour","Bonswer","Hola"])
@@ -51,7 +76,7 @@ class AddItemViewController: UIViewController {
         tagCollection.tags = ["Some", "Tag", "For", "You"]
         
         add(tagCollectionSelected, toView: selectedTagView)
-        tagCollectionSelected.tags = []
+        
         
         tagCollectionSelected.action = .removeTag
         
@@ -65,8 +90,6 @@ class AddItemViewController: UIViewController {
         tagCollection.delegate = self
         tagCollectionSelected.delegate = self
         
-        
-        
 
         // Do any additional setup after loading the view.
     }
@@ -74,10 +97,21 @@ class AddItemViewController: UIViewController {
     
     override func tagIsBeingAdded(name: String?) {
         // Example: save testCollection.tags to UserDefault
-        print("added \(name!)")
-        let newTag = Tag(context: managedContext)
-        newTag.name = name
-        tmpTags.append(newTag)
+        
+        if(tagsStr.contains(name!)){
+            print("not adding \(name)")
+        } else {
+            tagsStr.append(name!)
+            print("adding \(name)")
+            let newTag = Tag(context: managedContext)
+            newTag.name = name
+            tmpTags.append(newTag)
+        }
+        
+        
+        
+        
+        
     }
     
     override func tagIsBeingRemoved(name: String?) {
@@ -101,6 +135,15 @@ class AddItemViewController: UIViewController {
                 let category = Category(context: managedContext)
                 category.name = categoryTextField.text
                 newItem.category = category
+                
+                
+                var tags2 = NSSet()
+                tags = tags2.addingObjects(from: tmpTags) as NSSet
+                
+                var finalTags = Tags(context: managedContext)
+                finalTags.tags = tags
+                newItem.tags = finalTags
+                print("NewItems.tags \(newItem.tags)")
                 
                 print(newItem)
                 delegate?.addItemViewController(self)
