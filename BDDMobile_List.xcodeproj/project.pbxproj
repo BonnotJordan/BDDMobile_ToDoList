@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0843B297225F286D00DA8831 /* AttachmentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0843B296225F286D00DA8831 /* AttachmentHandler.swift */; };
+		0843B299225F7FF600DA8831 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0843B298225F7FF600DA8831 /* CategoriesTableViewController.swift */; };
 		0860CF3C2252810900A6F03D /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0860CF3B2252810900A6F03D /* AddItemViewController.swift */; };
 		08BCF7C1221FF0C30020659D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BCF7C0221FF0C30020659D /* AppDelegate.swift */; };
 		08BCF7C3221FF0C30020659D /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BCF7C2221FF0C30020659D /* ItemListViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		0843B296225F286D00DA8831 /* AttachmentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentHandler.swift; sourceTree = "<group>"; };
+		0843B298225F7FF600DA8831 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		0860CF3B2252810900A6F03D /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		08BCF7BD221FF0C30020659D /* BDDMobile_List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BDDMobile_List.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08BCF7C0221FF0C30020659D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			children = (
 				0860CF3B2252810900A6F03D /* AddItemViewController.swift */,
 				08BCF7C2221FF0C30020659D /* ItemListViewController.swift */,
+				0843B298225F7FF600DA8831 /* CategoriesTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				08BCF7C3221FF0C30020659D /* ItemListViewController.swift in Sources */,
 				0860CF3C2252810900A6F03D /* AddItemViewController.swift in Sources */,
 				0843B297225F286D00DA8831 /* AttachmentHandler.swift in Sources */,
+				0843B299225F7FF600DA8831 /* CategoriesTableViewController.swift in Sources */,
 				08BCF7C1221FF0C30020659D /* AppDelegate.swift in Sources */,
 				08E48746223FF25A00EE7F55 /* Model.xcdatamodeld in Sources */,
 			);
