@@ -293,7 +293,7 @@
         <!--Categories-->
         <scene sceneID="Pw3-BX-tyw">
             <objects>
-                <tableViewController id="qoc-Fp-tfZ" sceneMemberID="viewController">
+                <tableViewController id="qoc-Fp-tfZ" customClass="CategoriesTableViewController" customModule="BDDMobile_List" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tey-3m-O0C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
