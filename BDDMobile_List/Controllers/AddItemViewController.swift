@@ -29,8 +29,9 @@ class AddItemViewController: UIViewController {
     var tags = NSSet()
     var tmpTags = Array<Tag>()
     var tagsStr : Array<String> = Array<String>()
-    
     var arrayStrEditTags = Array<String>()
+    
+    var previousTags = Array<Tag>()
     
     
     
@@ -45,18 +46,24 @@ class AddItemViewController: UIViewController {
             nameTextField.text = itemToEdit?.name
             descriptionTextField.text = itemToEdit?.desc
             categoryTextField.text = itemToEdit?.category?.name
+            previousTags = itemToEdit?.tags?.tags?.allObjects as! Array<Tag>
+            var maxIndex = previousTags.count
+            for index in 0...maxIndex-1 {
+                let newTag = previousTags[index]
+                tmpTags.append(newTag)
+            }
             
             
-            var tags : Tags = itemToEdit!.tags!
-            var tagsTags : NSSet = tags.tags!
+            let tags : Tags = itemToEdit!.tags!
+            let tagsTags : NSSet = tags.tags!
             var tagArray : Array<Tag> = tagsTags.allObjects as! Array<Tag>
-            var max = tagArray.count
+            let max = tagArray.count
             print("maxIndex \(max)")
             var tagsNameArray : Array<String> = Array<String>()
             
             if(max > 0){
                 for i in 0...max-1 {
-                    var tagName = tagArray[i].name
+                    let tagName = tagArray[i].name
                     tagsNameArray.append(tagName!)
                 }
             }
@@ -90,6 +97,8 @@ class AddItemViewController: UIViewController {
         tagCollection.delegate = self
         tagCollectionSelected.delegate = self
         
+        
+        
 
         // Do any additional setup after loading the view.
     }
@@ -106,6 +115,7 @@ class AddItemViewController: UIViewController {
             let newTag = Tag(context: managedContext)
             newTag.name = name
             tmpTags.append(newTag)
+            
         }
         
         
@@ -137,10 +147,10 @@ class AddItemViewController: UIViewController {
                 newItem.category = category
                 
                 
-                var tags2 = NSSet()
+                let tags2 = NSSet()
                 tags = tags2.addingObjects(from: tmpTags) as NSSet
                 
-                var finalTags = Tags(context: managedContext)
+                let finalTags = Tags(context: managedContext)
                 finalTags.tags = tags
                 newItem.tags = finalTags
                 print("NewItems.tags \(newItem.tags)")
@@ -151,6 +161,18 @@ class AddItemViewController: UIViewController {
             
         } else {
             itemToEdit?.name = nameTextField.text!
+            itemToEdit?.desc = descriptionTextField.text!
+            let category = Category(context: managedContext)
+            category.name = categoryTextField.text!
+            itemToEdit?.category = category
+            
+            let tags2 = NSSet()
+            tags = tags2.addingObjects(from: tmpTags) as NSSet
+            
+            let finalTags = Tags(context: managedContext)
+            finalTags.tags = tags
+            itemToEdit?.tags = finalTags
+            
             delegate?.editItemViewController(self, withItem: itemToEdit!, atIndexPath: indexPath!)
         }
         
