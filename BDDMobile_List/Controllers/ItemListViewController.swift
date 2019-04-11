@@ -184,7 +184,7 @@ extension ItemListViewController : UITableViewDelegate, UITableViewDataSource, U
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         filteredItems = searchText.isEmpty ? items : items.filter { ( item : Item) -> Bool in
-            return item.name!.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+            return item.name!.range(of: searchText, options: [.diacriticInsensitive, .caseInsensitive], range: nil, locale: nil) != nil
         }
         
         tableView.reloadData()
