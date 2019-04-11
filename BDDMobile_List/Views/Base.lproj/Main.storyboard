@@ -231,7 +231,7 @@
                     <navigationItem key="navigationItem" title="Tags" id="EPL-B8-OoM">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="c5x-sK-Yec">
                             <connections>
-                                <segue destination="ddX-LF-kvx" kind="presentation" id="3UZ-zo-XrU"/>
+                                <segue destination="ddX-LF-kvx" kind="presentation" identifier="addTag" id="3UZ-zo-XrU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

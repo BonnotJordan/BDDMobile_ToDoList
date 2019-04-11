@@ -9,6 +9,8 @@
 import UIKit
 
 class AddTagViewController: UIViewController {
+    
+    var delegate : AddTagViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,9 +19,11 @@ class AddTagViewController: UIViewController {
     }
     
     @IBAction func onCancel(_ sender: Any) {
+        delegate?.addTagViewControllerDidCancel(self)
     }
     
     @IBAction func onDone(_ sender: Any) {
+        delegate?.addTagViewController(self)
     }
     /*
     // MARK: - Navigation
@@ -31,4 +35,10 @@ class AddTagViewController: UIViewController {
     }
     */
 
+}
+
+protocol AddTagViewControllerDelegate : class {
+    func addTagViewControllerDidCancel(_ controller: AddTagViewController)
+    func addTagViewController(_ controller: AddTagViewController)
+    func editTagViewController(_ controller: AddTagViewController, withTag tagEdit: Tag, atIndexPath indexPath: IndexPath)
 }

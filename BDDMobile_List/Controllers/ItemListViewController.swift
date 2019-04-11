@@ -27,7 +27,7 @@ class ItemListViewController: UIViewController {
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         managedContext = appDelegate.persistentContainer.viewContext
         
-        self.items = self.appDelegate.loadContext()
+        self.items = self.appDelegate.loadContextItems()
         filteredItems = items
         tableView.reloadData()
         
@@ -53,7 +53,7 @@ class ItemListViewController: UIViewController {
                         self.items[itemIndex2.item].name = newItemText
                         
                         self.appDelegate.saveContext()
-                        self.items = self.appDelegate.loadContext()
+                        self.items = self.appDelegate.loadContextItems()
                         
                         self.filteredItems = self.items
                         self.tableView.reloadData()
@@ -82,7 +82,7 @@ class ItemListViewController: UIViewController {
                     item.checked = false
 
                     self.appDelegate.saveContext()
-                    self.items = self.appDelegate.loadContext()
+                    self.items = self.appDelegate.loadContextItems()
                     
                     
                     self.filteredItems = self.items
@@ -151,7 +151,7 @@ extension ItemListViewController : UITableViewDelegate, UITableViewDataSource, U
         
         self.managedContext.delete(items[indexPath.row])
         self.appDelegate.saveContext()
-        self.items = self.appDelegate.loadContext()
+        self.items = self.appDelegate.loadContextItems()
         
         filteredItems = items
         tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
@@ -168,7 +168,7 @@ extension ItemListViewController : UITableViewDelegate, UITableViewDataSource, U
             
             self.managedContext.delete(self.items[indexPath.row])
             self.appDelegate.saveContext()
-            self.items = self.appDelegate.loadContext()
+            self.items = self.appDelegate.loadContextItems()
             
             self.filteredItems = self.items
             tableView.reloadData()
@@ -223,7 +223,7 @@ extension ItemListViewController : AddItemViewControllerDelegate {
     
     func addItemViewController(_ controller: AddItemViewController) {
         self.appDelegate.saveContext()
-        self.items = self.appDelegate.loadContext()
+        self.items = self.appDelegate.loadContextItems()
         self.filteredItems = self.items
         self.tableView.reloadData()
         dismiss(animated: true, completion: nil)
@@ -233,7 +233,7 @@ extension ItemListViewController : AddItemViewControllerDelegate {
         self.items[indexPath.row] = itemEdit
         
         self.appDelegate.saveContext()
-        self.items = self.appDelegate.loadContext()
+        self.items = self.appDelegate.loadContextItems()
         
         self.filteredItems = self.items
         self.tableView.reloadData()

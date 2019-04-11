@@ -77,14 +77,33 @@ class TagslistViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "addTag"){
+            let navigation = segue.destination as! UINavigationController
+            let delegateVC = navigation.topViewController as! AddTagViewController
+            delegateVC.delegate = self
+        }
     }
-    */
+ 
 
+}
+
+extension TagslistViewController : AddTagViewControllerDelegate {
+    func addTagViewControllerDidCancel(_ controller: AddTagViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func addTagViewController(_ controller: AddTagViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func editTagViewController(_ controller: AddTagViewController, withTag tagEdit: Tag, atIndexPath indexPath: IndexPath) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
 }
