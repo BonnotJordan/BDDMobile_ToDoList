@@ -16,7 +16,7 @@ class CategoriesTableViewController: UITableViewController {
     var appDelegate: AppDelegate!
     
     @IBAction func addCategory(_ sender: Any) {
-        
+        addCategory()
     }
     
     override func viewDidLoad() {
@@ -48,16 +48,68 @@ class CategoriesTableViewController: UITableViewController {
 
         return cell
     }
- 
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    func addCategory(isEditing: Bool = false, itemIndex: IndexPath? = nil) {
+        if(isEditing) {
+            if let itemIndex2 = itemIndex {
+                let alertController = UIAlertController(title: "Doing", message: "Edit category ?", preferredStyle: UIAlertController.Style.alert)
+                alertController.addTextField(configurationHandler: { (textField) in
+                    textField.placeholder = "Enter your category"
+                    textField.text = self.categories[itemIndex2.item].name
+                })
+                let okAction = UIAlertAction(title: "Ok", style: .default) {
+                    (action) in
+                    let textField = alertController.textFields![0] as UITextField
+                    let newCategoryText = textField.text!
+                    if(!newCategoryText.isEmpty){
+                        self.categories[itemIndex2.item].name = newCategoryText
+                        
+                        self.appDelegate.saveContext()
+                        self.categories = self.appDelegate.loadContextCategories()
+                        
+                        self.tableView.reloadData()
+                    }
+                    
+                }
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+                alertController.addAction(okAction)
+                alertController.addAction(cancelAction)
+                present(alertController, animated: true, completion: nil)
+            }
+        } else {
+            let alertController = UIAlertController(title: "Doing", message: "New category ?", preferredStyle: UIAlertController.Style.alert)
+            alertController.addTextField(configurationHandler: { (textField) in
+                textField.placeholder = "Enter your category"
+            })
+            let okAction = UIAlertAction(title: "Ok", style: .default) {
+                (action) in
+                let textField = alertController.textFields![0] as UITextField
+                let newCategoryText = textField.text!
+                if(!newCategoryText.isEmpty){
+                    
+                    
+                    let category = Category(context: self.managedContext)
+                    category.name = newCategoryText
+                    
+                    self.appDelegate.saveContext()
+                    self.categories = self.appDelegate.loadContextCategories()
+                    
+                    self.tableView.reloadData()
+                }
+                
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+            alertController.addAction(okAction)
+            alertController.addAction(cancelAction)
+            present(alertController, animated: true, completion: nil)
+        }
     }
-    */
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        addCategory(isEditing: true, itemIndex: indexPath)
+    }
+ 
     /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -67,21 +119,6 @@ class CategoriesTableViewController: UITableViewController {
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
     }
     */
 
