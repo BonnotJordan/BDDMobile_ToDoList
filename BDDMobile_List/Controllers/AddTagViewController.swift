@@ -11,6 +11,8 @@ import UIKit
 class AddTagViewController: UIViewController {
     
     var delegate : AddTagViewControllerDelegate?
+    var indexPath : IndexPath?
+    var tagToEdit : Tag?
 
     override func viewDidLoad() {
         super.viewDidLoad()

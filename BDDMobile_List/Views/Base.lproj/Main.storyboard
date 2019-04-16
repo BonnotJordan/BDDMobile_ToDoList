@@ -235,6 +235,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="31J-zg-Cft" id="wFK-J5-ETc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Waf-tq-Lan" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
