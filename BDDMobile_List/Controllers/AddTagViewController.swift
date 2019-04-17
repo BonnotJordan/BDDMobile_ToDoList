@@ -7,15 +7,28 @@
 //
 
 import UIKit
+import CoreData
 
 class AddTagViewController: UIViewController {
     
+    var managedContext: NSManagedObjectContext!
+    var appDelegate: AppDelegate!
     var delegate : AddTagViewControllerDelegate?
     var indexPath : IndexPath?
     var tagToEdit : Tag?
-
+    @IBOutlet weak var nameTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        appDelegate = UIApplication.shared.delegate as! AppDelegate
+        managedContext = appDelegate.persistentContainer.viewContext
+        
+        if(tagToEdit != nil){
+            self.title = "Edit a Tag"
+            nameTextField.text = tagToEdit?.name
+        } else {
+            self.title = "Create a tag"
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -25,7 +38,15 @@ class AddTagViewController: UIViewController {
     }
     
     @IBAction func onDone(_ sender: Any) {
-        delegate?.addTagViewController(self)
+        if(tagToEdit == nil){
+            let newTag = Tag(context: managedContext)
+            newTag.name = nameTextField.text
+            delegate?.addTagViewController(self)
+        } else {
+            tagToEdit?.name = nameTextField.text!
+            delegate?.editTagViewController(self, withTag: tagToEdit!, atIndexPath: indexPath!)
+        }
+        
     }
     /*
     // MARK: - Navigation

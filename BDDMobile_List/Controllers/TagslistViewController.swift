@@ -31,6 +31,15 @@ class TagslistViewController: UIViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.tags = self.appDelegate.loadContextTags()
+        tableView.reloadData()
+    }
+    
+    func configureText(for cell: UITableViewCell, withTag tag: Tag) {
+        cell.textLabel?.text = tag.name
+    }
 
     // MARK: - Table view data source
 
@@ -92,19 +101,18 @@ class TagslistViewController: UIViewController {
 
 extension TagslistViewController : UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return tags.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier")!
-        //configureText(for: cell, withItem: filteredItems[indexPath.item] )
-        //configureCheckmark(for: cell,withItem: filteredItems[indexPath.item] )
+        configureText(for: cell, withTag: tags[indexPath.item] )
         return cell
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { (action, index) in
-            self.performSegue(withIdentifier: "editItem", sender: index)
+            self.performSegue(withIdentifier: "editTag", sender: index)
         }
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
             
@@ -126,12 +134,12 @@ extension TagslistViewController : UITableViewDelegate, UITableViewDataSource, U
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "addItem"){
+        if (segue.identifier == "addTag"){
             let navigation = segue.destination as! UINavigationController
             let delegateVC = navigation.topViewController as! AddTagViewController
             delegateVC.delegate = self
         }
-        else if (segue.identifier == "editItem"){
+        else if (segue.identifier == "editTag"){
             let navigation = segue.destination as! UINavigationController
             let delegateVC = navigation.topViewController as! AddTagViewController
             delegateVC.indexPath = sender as! IndexPath
@@ -148,10 +156,20 @@ extension TagslistViewController : AddTagViewControllerDelegate {
     }
     
     func addTagViewController(_ controller: AddTagViewController) {
+        self.appDelegate.saveContext()
+        self.tags = self.appDelegate.loadContextTags()
+        self.tableView.reloadData()
         dismiss(animated: true, completion: nil)
     }
     
     func editTagViewController(_ controller: AddTagViewController, withTag tagEdit: Tag, atIndexPath indexPath: IndexPath) {
+        self.tags[indexPath.row] = tagEdit
+        
+        self.appDelegate.saveContext()
+        self.tags = self.appDelegate.loadContextTags()
+        
+        
+        self.tableView.reloadData()
         dismiss(animated: true, completion: nil)
     }
     

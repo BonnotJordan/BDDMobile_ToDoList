@@ -27,6 +27,11 @@ class CategoriesTableViewController: UITableViewController {
         self.categories = self.appDelegate.loadContextCategories()
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.categories = self.appDelegate.loadContextCategories()
+        tableView.reloadData()
+    }
 
     // MARK: - Table view data source
 
@@ -108,6 +113,15 @@ class CategoriesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         addCategory(isEditing: true, itemIndex: indexPath)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        self.managedContext.delete(self.categories[indexPath.row])
+        self.appDelegate.saveContext()
+        self.categories = self.appDelegate.loadContextCategories()
+        
+        tableView.reloadData()
     }
  
     /*

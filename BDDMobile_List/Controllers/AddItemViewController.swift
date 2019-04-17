@@ -34,6 +34,9 @@ class AddItemViewController: UIViewController {
     
     var previousTags = Array<Tag>()
     var previousTagsStr = Array<String>()
+    var allTagsStrFromCoreData = [String]()
+    var allCategoriesFromCoreData = [Category]()
+    var allCategoriesStrFromCoreData = [String]()
     
     
     
@@ -52,9 +55,12 @@ class AddItemViewController: UIViewController {
             let maxIndex = previousTags.count
             if(maxIndex > 0) {
                 for index in 0...maxIndex-1 {
-                    let newTag = previousTags[index]
-                    tmpTags.append(newTag)
-                    previousTagsStr.append(newTag.name!)
+                    if(previousTags[index].name != nil){
+                        let newTag = previousTags[index]
+                        tmpTags.append(newTag)
+                        previousTagsStr.append(newTag.name!)
+                    }
+                    
                 }
             }
             
@@ -69,8 +75,11 @@ class AddItemViewController: UIViewController {
             
             if(max > 0){
                 for i in 0...max-1 {
-                    let tagName = tagArray[i].name
-                    tagsNameArray.append(tagName!)
+                    if(tagArray[i].name != nil){
+                        let tagName = tagArray[i].name
+                        tagsNameArray.append(tagName!)
+                    }
+                    
                 }
             }
             
@@ -82,12 +91,23 @@ class AddItemViewController: UIViewController {
             tagCollectionSelected.tags = []
         }
         
-        categoryTextField.filterStrings(["Hello","Bonjour","Bonswer","Hola"])
+        allCategoriesFromCoreData = appDelegate.loadContextCategories()
+        if(allCategoriesFromCoreData.count > 0){
+            for i in 0...allCategoriesFromCoreData.count-1 {
+                allCategoriesStrFromCoreData.append(allCategoriesFromCoreData[i].name!)
+            }
+        }
+        
+        categoryTextField.filterStrings(allCategoriesStrFromCoreData)
         
         
         add(tagCollection, toView: tagView)
-        tagCollection.tags = ["Some", "Tag", "For", "You"]
+        var tags = appDelegate.loadContextTags()
         
+        for i in 0...tags.count-1 {
+            allTagsStrFromCoreData.append(tags[i].name!)
+        }
+        tagCollection.tags = allTagsStrFromCoreData
         add(tagCollectionSelected, toView: selectedTagView)
         
         
@@ -111,10 +131,25 @@ class AddItemViewController: UIViewController {
         // Example: save testCollection.tags to UserDefault
         if(tagsStr.contains(name!) || previousTagsStr.contains(name!)){
         } else {
-            tagsStr.append(name!)
-            let newTag = Tag(context: managedContext)
-            newTag.name = name
-            tmpTags.append(newTag)
+            if(allTagsStrFromCoreData.contains(name!)) {
+                var tagsCoreData = appDelegate.loadContextTags()
+                var index : Int?
+                for i in 0...tagsCoreData.count-1 {
+                    if(tagsCoreData[i].name == name! ) {
+                        index = i
+                    }
+                }
+                var tagAdded = tagsCoreData[index!]
+                tmpTags.append(tagAdded)
+            } else {
+                print("pass here")
+                tagsStr.append(name!)
+                var tagAdded = Tag(context: managedContext)
+                tagAdded.name = name
+                tmpTags.append(tagAdded)
+            }
+            
+            
         }
         
     }
@@ -148,9 +183,22 @@ class AddItemViewController: UIViewController {
                 let newItem = Item(context: managedContext)
                 newItem.name = nameTextField.text
                 newItem.desc = descriptionTextField.text
-                let category = Category(context: managedContext)
-                category.name = categoryTextField.text
-                newItem.category = category
+                if(allCategoriesStrFromCoreData.contains(categoryTextField.text!)){
+                    var index : Int?
+                    for i in 0...allCategoriesFromCoreData.count-1 {
+                        if(allCategoriesFromCoreData[i].name == categoryTextField.text! ) {
+                            index = i
+                        }
+                    }
+                    var categoryAdded = allCategoriesFromCoreData[index!]
+                    newItem.category = categoryAdded
+                    
+                } else {
+                    let category = Category(context: managedContext)
+                    category.name = categoryTextField.text
+                    newItem.category = category
+                }
+                
                 
                 
                 let tags2 = NSSet()

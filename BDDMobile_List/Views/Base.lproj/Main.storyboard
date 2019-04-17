@@ -214,13 +214,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="TjI-s5-5t7">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellIdentifier" id="TjI-s5-5t7">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TjI-s5-5t7" id="5y3-QG-qzn">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ddX-LF-kvx" kind="presentation" identifier="editTag" trigger="accessoryAction" id="f2C-qk-enE"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -386,7 +389,20 @@
                     <view key="view" contentMode="scaleToFill" id="Qi8-7m-OVW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter tag name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="biM-G6-Nph">
+                                <rect key="frame" x="5" y="114" width="365" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="biM-G6-Nph" firstAttribute="leading" secondItem="r5F-aC-D4l" secondAttribute="leading" constant="5" id="Emk-WP-zUa"/>
+                            <constraint firstItem="r5F-aC-D4l" firstAttribute="trailing" secondItem="biM-G6-Nph" secondAttribute="trailing" constant="5" id="hPq-Jq-GEt"/>
+                            <constraint firstItem="biM-G6-Nph" firstAttribute="top" secondItem="r5F-aC-D4l" secondAttribute="top" constant="50" id="kij-5D-YlS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="r5F-aC-D4l"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create a tag" id="LOx-HA-UdL">
@@ -401,6 +417,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="biM-G6-Nph" id="kB8-ll-M1O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="87P-Zd-Lia" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -431,6 +450,7 @@
         <image name="icons8-tags-filled-50" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8Nb-gO-h26"/>
+        <segue reference="f2C-qk-enE"/>
+        <segue reference="xbG-am-zmh"/>
     </inferredMetricsTieBreakers>
 </document>
