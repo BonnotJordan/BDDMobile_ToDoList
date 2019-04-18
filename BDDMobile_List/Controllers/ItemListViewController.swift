@@ -12,12 +12,17 @@ import CoreData
 class ItemListViewController: UIViewController {
 
     
+    @IBOutlet weak var filterByButton: UIBarButtonItem!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     var items = Array<Item>()
+    var categories = [Category]()
     var filteredItems = Array<Item>()
     var managedContext: NSManagedObjectContext!
     var appDelegate: AppDelegate!
+    var sections = [String]()
+    var isFilterByCategory = false
+    var isFirstTapButton = true
     
     override func viewDidLoad() {
         
@@ -29,12 +34,32 @@ class ItemListViewController: UIViewController {
         
         self.items = self.appDelegate.loadContextItems()
         filteredItems = items
-        tableView.reloadData()
+        self.tableView.reloadData()
         
+        let categories = self.appDelegate.loadContextCategories()
+        if(categories.count > 0){
+            for i in 0...categories.count-1 {
+                sections.append(categories[i].name!)
+            }
+        }
+        
+        self.categories = appDelegate.loadContextCategories()
+        print(categories.count)
         // Do any additional setup after loading the view, typically from a nib.
         
-        
         setupConstraints()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.items = self.appDelegate.loadContextItems()
+        let categories = self.appDelegate.loadContextCategories()
+        sections = [String]()
+        if(categories.count > 0){
+            for i in 0...categories.count-1 {
+                sections.append(categories[i].name!)
+            }
+        }
+        self.tableView.reloadData()
     }
     //MARK: Actions
     func showAlert(isEditing: Bool = false, itemIndex: IndexPath? = nil) {
@@ -107,6 +132,59 @@ class ItemListViewController: UIViewController {
         showAlert()
     }
     
+    @IBAction func filterByAction(_ sender: Any) {
+        if(filterByButton.title == "Filter by categories"){
+            filterByButton.title = "Filter by name"
+            isFilterByCategory = true
+            self.items = self.appDelegate.loadContextItems()
+            let categories = self.appDelegate.loadContextCategories()
+            sections = [String]()
+            if(categories.count > 0){
+                for i in 0...categories.count-1 {
+                    sections.append(categories[i].name!)
+                }
+            }
+            self.tableView.reloadData()
+        } else {
+            filterByButton.title = "Filter by categories"
+            isFilterByCategory = false
+            self.items = self.appDelegate.loadContextItems()
+            let categories = self.appDelegate.loadContextCategories()
+            sections = [String]()
+            if(categories.count > 0){
+                for i in 0...categories.count-1 {
+                    sections.append(categories[i].name!)
+                }
+            }
+            self.tableView.reloadData()
+        }
+        
+        
+        
+        
+        
+        /*if(self.isFilterByCategory){
+            if(filterByButton.title == "Filter by name"){
+                filterByButton.title = "Filter by categories"
+            } else {
+                filterByButton.title = "Filter by name"
+            }
+            
+            //tableView.reloadData()
+            isFilterByCategory = false
+        } else {
+            if(filterByButton.title == "Filter by categories"){
+                filterByButton.title = "Filter by name"
+            } else {
+                filterByButton.title = "Filter by categories"
+            }
+            
+            
+            //tableView.reloadData()
+            isFilterByCategory = true
+
+        }*/
+    }
     //MARK: View Setup
     func setupConstraints() {
         /*navigationBar.translatesAutoresizingMaskIntoConstraints = false
@@ -130,13 +208,50 @@ class ItemListViewController: UIViewController {
 
 extension ItemListViewController : UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(isFilterByCategory){
+            print(section)
+            let counter = self.items.filter( {$0.category!.name == self.categories[section].name }).count
+            //print(counter)
+            return counter
+        }
         return filteredItems.count
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if(isFilterByCategory){
+            if(sections.count > 0){
+                return sections.count
+            }
+        }
+        return 1
+        
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if(isFilterByCategory){
+            if(self.sections.count > 0){
+                //print(self.sections[section])
+                return self.sections[section]
+            }
+            
+        }
+        return nil
+        
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier")!
-        configureText(for: cell, withItem: filteredItems[indexPath.item] )
-        configureCheckmark(for: cell,withItem: filteredItems[indexPath.item] )
+        if(isFilterByCategory){
+            let categories = appDelegate.loadContextCategories()
+            let names = items.filter( {$0.category!.name == categories[indexPath.row].name }).map({ return $0.name })
+            //print(names)
+            cell.textLabel?.text = names[indexPath.row]
+            configureCheckmark(for: cell,withItem: filteredItems[indexPath.item] )
+        } else {
+            configureText(for: cell, withItem: filteredItems[indexPath.item] )
+            configureCheckmark(for: cell,withItem: filteredItems[indexPath.item] )
+        }
+        
+        
         return cell
     }
     

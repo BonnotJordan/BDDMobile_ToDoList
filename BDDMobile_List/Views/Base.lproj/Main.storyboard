@@ -62,6 +62,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="List" id="eey-je-dQu">
                         <barButtonItem key="backBarButtonItem" title="Return" id="3O2-0n-tqa"/>
+                        <barButtonItem key="leftBarButtonItem" title="Filter by categories" id="gCX-J7-j8O">
+                            <connections>
+                                <action selector="filterByAction:" destination="BYZ-38-t0r" id="Vic-GK-a0k"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="VsC-MQ-1Lo">
                             <connections>
                                 <action selector="addItem:" destination="BYZ-38-t0r" id="30r-nS-Sim"/>
@@ -70,6 +75,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="filterByButton" destination="gCX-J7-j8O" id="gOr-na-Hlw"/>
                         <outlet property="searchBar" destination="Yg2-f1-qmS" id="NqP-eb-okk"/>
                         <outlet property="tableView" destination="wS2-tK-Liz" id="vgl-e5-K1r"/>
                         <segue destination="BCQ-Tq-II7" kind="presentation" identifier="editItem" id="xbG-am-zmh"/>
