@@ -45,6 +45,13 @@ class ItemListViewController: UIViewController {
         
         self.categories = appDelegate.loadContextCategories()
         print(categories.count)
+        
+        let datas = self.items.filter( {$0.category!.name == self.categories[0].name })
+        print(datas)
+        
+        for i in 0...items.count-1 {
+            print(items[i].category?.name)
+        }
         // Do any additional setup after loading the view, typically from a nib.
         
         setupConstraints()
@@ -210,8 +217,8 @@ extension ItemListViewController : UITableViewDelegate, UITableViewDataSource, U
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(isFilterByCategory){
             print(section)
-            let counter = self.items.filter( {$0.category!.name == self.categories[section].name }).count
-            //print(counter)
+            let counter = self.items.filter( {return $0.category!.name == self.categories[section].name}).count
+            print("counter \(counter)")
             return counter
         }
         return filteredItems.count
@@ -220,6 +227,7 @@ extension ItemListViewController : UITableViewDelegate, UITableViewDataSource, U
     func numberOfSections(in tableView: UITableView) -> Int {
         if(isFilterByCategory){
             if(sections.count > 0){
+                print(sections.count)
                 return sections.count
             }
         }
@@ -242,9 +250,9 @@ extension ItemListViewController : UITableViewDelegate, UITableViewDataSource, U
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier")!
         if(isFilterByCategory){
             let categories = appDelegate.loadContextCategories()
-            let names = items.filter( {$0.category!.name == categories[indexPath.row].name }).map({ return $0.name })
+            let names = items.filter( { return $0.category!.name == categories[indexPath.row].name })
             //print(names)
-            cell.textLabel?.text = names[indexPath.row]
+            cell.textLabel?.text = names[indexPath.row].name
             configureCheckmark(for: cell,withItem: filteredItems[indexPath.item] )
         } else {
             configureText(for: cell, withItem: filteredItems[indexPath.item] )
